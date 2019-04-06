@@ -1,0 +1,73 @@
+<header title="Calendar"> </header>
+
+<ion-content class="paddingTop">
+
+	<img src="assets/imgs/calendar/clock.png" class="clockC">
+	<button ion-button round class="eventBtn" (click)="addEvent()">ADD EVENT</button>
+	<ion-item>
+		<ion-icon name="ios-arrow-back" (click)="goToLastMonth()" item-start class="backC"></ion-icon>
+		<ion-icon name="md-calendar" (click)="showDatePicker()" item-start class="calendarC"></ion-icon>
+		<ion-icon name="ios-arrow-forward" (click)="goToNextMonth()" item-start class="forwardC"></ion-icon>
+		<p item-start class="monthP">{{currentMonth}} {{currentYear}}</p>
+	</ion-item>
+		
+  <div class="calendar-body">
+    <ion-grid class="withscroll">
+      <ion-row class="calendar-weekday">
+      	<ion-col class="employee-col">Sunday</ion-col>
+        <ion-col class="employee-col">Monday</ion-col>
+        <ion-col class="employee-col">Tuesday</ion-col>
+        <ion-col class="employee-col">Wednesday</ion-col>
+        <ion-col class="employee-col">Thursday</ion-col>
+        <ion-col class="employee-col">Friday</ion-col>
+        <ion-col class="employee-col">Saturday</ion-col>
+      </ion-row>
+      <ion-row class="calendar-date">
+        <ion-col *ngFor="let lastDay of daysInLastMonth" class="last-month setCol" (click)="goToLastMonth()">{{lastDay}}</ion-col>
+        <ion-col *ngFor="let day of daysInThisMonth" (click)="selectDate(day)" class="setCol1 topleft">
+          <img src="assets/imgs/calendar/shap-3.png" class="shapeC" *ngIf="eventImg">
+          <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
+          <ng-template #otherDate class="otherDate">
+            {{day}}<br>
+          </ng-template>
+        </ion-col>
+        <ion-col *ngFor="let nextDay of daysInNextMonth" class="next-month setCol" (click)="goToNextMonth()">{{nextDay}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <br/>
+  
+  <ion-grid>
+  	<ion-row *ngFor="let event of selectedMonthEvent" class="eventItem">
+      <!-- {{event | json}} -->
+  		<ion-col col-2 col-xl-2 class="colP">
+  			<p class="timeP">{{event.start_time}}<br>
+        {{event.end_time}}</p>
+  		</ion-col>
+  		<ion-col col-8 col-xl-8 class="colP">
+  			<p item-start class="descP"><b class="descB">{{event.title}}</b><br>{{event.description}}</p>
+  		</ion-col>
+  		<ion-col col-2 col-xl-2 class="colEdit">
+  			<div item-end class="divC">
+        	<button ion-button round outline class="editBtn" (click)="editEvent()">EDIT</button>
+        	<br/>
+        	<button ion-button round outline class="openBEO" (click)="openBEO()">OPEN BEO</button>
+      	</div>
+  		</ion-col>
+  		
+  	</ion-row>
+
+    <ion-row *ngIf="selectedMonthEvent.length <= 0" class="eventItem">
+      No Events Available On This Day.
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+  	<ion-row>
+				<ion-col class="eventCol"><button ion-button round outline class="EventBtn" (click)="trainingEvent()">TRAINING</button></ion-col>
+				<ion-col class="eventCol"><button ion-button round outline class="EventBtn" (click)="reservationEvent()">RESERVATION</button></ion-col>
+				<ion-col class="eventCol"><button ion-button round outline class="EventBtn" (click)="occupancyEvent()">OCCUPANCY</button></ion-col>
+				<ion-col class="eventCol"><button ion-button round outline class="EventBtn" (click)="vipListEvent()">VIP LIST</button></ion-col>
+			</ion-row>
+  </ion-grid>
+  <div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

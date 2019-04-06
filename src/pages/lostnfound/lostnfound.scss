@@ -1,0 +1,273 @@
+page-lostnfound {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.entryBtn{
+    height: 30px !important;
+    width: 115px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px !important;
+    background: #0614AE;
+    font-family: 'Roboto' !important;
+    float: right;
+    margin-right: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.3)
+	}
+	.entryBtn:hover{
+		background-color: #0614AE !important;
+	}
+	.segment{
+		background: #01083C !important;
+    padding: 11px;
+    padding-top: 22px;
+	}
+	.toolbar-color{
+		background: #01083C !important;
+    padding: 0px;
+	}
+	.searchBar{
+		margin-top: 10px;
+	}
+	.returnBtn{
+		min-width: 80px;
+    height: 25px !important;
+    border-color: #C3C5C6;
+    color: #9c9c9c;
+    font-weight: 600;
+    font-size: 12px !important;
+    margin-left: 0px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.3)
+	}
+	.returnBtn:hover{
+		background-color: #C3C5C6 !important;
+	}
+	.editBtn{
+    min-width: 80px;
+    height: 25px !important;
+    border-color: #C3C5C6;
+    color: #9c9c9c;
+    font-weight: 600;
+    font-size: 12px !important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.3)
+  }
+  .editBtn:hover{
+    background-color: #C3C5C6 !important;
+  }
+	.lastBtns{
+		background-color: transparent;
+		padding-left: 10px;
+		margin-top: -10px;
+	}
+	.gridC{
+    margin: auto;
+    width: 96%;
+    padding: 0px;
+    margin-top: 10px;
+	}
+	.nameH{
+		margin-top: -5px;
+		margin-bottom: 5px;
+	}
+	.nameP{
+		margin-top: -5px;
+    font-weight: 400;
+    color: #777879;
+    padding-right: 0px !important;
+	}
+	.nameB{
+		margin-top: -5px;
+		font-weight: 400;
+	}
+	.nameP1{
+		font-size: 15px;
+    font-weight: 300;
+		margin-top: -10px;
+	}
+	.rowC{
+		background: #F3F3F3;
+    margin-top: 15px;
+    border-radius: 7px;
+    max-height: fit-content;
+    height: fit-content;
+	}
+	.listImg {
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+  .listImgdiv {
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: grey;
+  }
+  .docImg {
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+    width: 100%;
+    height: 100%;
+  }
+  .imgCol{
+  	padding: 0px;
+  }
+  .notecol{
+    text-align: center;
+    padding: 50px;
+  }
+  .nopost {
+    text-align: center;
+    margin-top: 20px;
+    color: #01083C !important;
+  }
+  .downloadBtn{
+    width: 95%;
+    border-color: #C3C5C6;
+    color: #9c9c9c;
+    font-weight: 600;
+    font-size: 12px !important;
+    line-height: 15px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+    background-color: #f3f3f3;
+    }
+    .downloadBtn:hover{
+        background-color: #f3f3f3 !important;
+    }
+
+
+
+	//// Default css
+	.searchbar-md .searchbar-input, .searchbar-ios .searchbar-input, .searchbar-wp .searchbar-input, {
+    padding: 2px 15px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #141414;
+    background-color: #fff;
+    -webkit-box-shadow: none !important;
+	}
+	.searchbar-md .searchbar-clear-icon, .searchbar-ios .searchbar-clear-icon, .searchbar-wp .searchbar-clear-icon {
+    left: 13px !important;
+    top: 0;
+    padding: 0;
+    background-position: center;
+    position: absolute;
+    width: 22px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 22px;
+	}
+	.searchbar-md .searchbar-search-icon, .searchbar-ios .searchbar-search-icon, .searchbar-wp .searchbar-search-icon {
+    right: 5px !important;
+    top: 12px;
+    width: 21px;
+    height: 21px;
+    left: auto;
+	}
+	.searchbar-ios {
+    padding: 0 8px;
+    min-height: 44px;
+    border-top: 0.55px solid transparent;
+    border-bottom: none;
+    background: transparent;
+	}
+	.searchbar-ios.searchbar-left-aligned .searchbar-input,
+    .searchbar-md.searchbar-left-aligned .searchbar-input,
+    .searchbar-wp.searchbar-left-aligned .searchbar-input {
+    padding-left: 40px;
+    }
+	.toolbar-title-ios, .toolbar-title-md, .toolbar-title-wp {
+    font-size: 16px;
+    color: white !important;
+	}
+	.segment-ios .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+	}
+	.segment-wp .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+	}
+	.segment-md .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+    margin-bottom: -11px;
+    text-transform: none;
+	}
+	.segment-ios .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    border-color: transparent;
+	}
+	.segment-md .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    margin-bottom: -11px;
+    border-color: transparent;
+	}
+	.segment-wp .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    border-color: transparent;
+	}
+  .segment-md .segment-button ion-icon {
+    font-size: 16px;
+    line-height: 3rem;
+  }
+}

@@ -1,0 +1,81 @@
+page-duty-roster-employee-profile {
+	ion-content {
+    &.content {
+      div.scroll-content {
+        top: 30%;
+		    left: 5%;
+		    width: 90%;
+		    height: 200px;
+        overflow:hidden;
+      }
+    }
+
+    &.content-ios {
+      background-color: rgba(0, 0, 0, 0.3);
+
+      div.scroll-content {
+        background-color: #F3F3F3;
+		    border-radius: 10px;
+      }
+    }
+
+    &.content-md {
+      background-color: rgba(0, 0, 0, 0.3);
+      
+      div.scroll-content {
+        background-color: #F3F3F3;
+		    border-radius: 10px;
+      }
+    }
+	}
+	.divC1 {
+		max-width: 50%;
+		float: left;
+	}
+	.divC2 {
+		max-width: 50%;
+		float: right;
+		width: 100%;
+	}
+	.imageC{
+		height: -webkit-fill-available !important;
+		width: 100%;
+	}
+	.itemC{
+		background: transparent;
+		margin-bottom: -13px;
+	}
+	.headP{
+		font-size: 12px;
+    font-family: 'Roboto' !important;
+	}
+	.detailP{
+		font-size: 14px;
+    font-family: 'Roboto' !important;
+    color: #1E1F20;
+	}
+
+	@media (min-width: 300px) and (min-height: 500px) {
+    ion-backdrop {
+      visibility: visible;
+    }
+  }
+	
+	ion-modal.profile-modal ion-backdrop {
+    visibility: visible !important;
+    z-index:0;
+	}
+	ion-modal.profile-modal .modal-wrapper{
+	    top: 45px;
+	    height: 177px;
+    	width: 177px;
+	    position:absolute;
+	}
+	.closeC{
+		position: absolute;
+    top: 0px;
+    right: 14px;
+    font-size: 30px;
+    color: #fff;
+	}
+}

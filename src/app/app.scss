@@ -1,0 +1,263 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.menuDiv{
+  padding-top: 10px;
+  border-bottom: 1px solid #fff;
+}
+.menuImgs{
+  display: flex;
+  height: 20px;
+  width: 20px;
+  margin: auto;
+} 
+.menuImgs1{
+  display: none;
+  height: 20px;
+  width: 20px;
+  margin: auto;
+} 
+.name{
+  color: #fff;
+  font-size: 11px;
+  text-align: center;
+  margin-top: 5px;
+}
+.menuDivDefault{
+  padding: 10px;
+    height: 5rem;
+    border-bottom: 1px solid #fff;
+}
+.menuImgsdefault{
+  height: 20px;
+  width: 20px;
+  float: right;
+}
+.menu.menu-left{
+  width: calc(100% - 70px) !important;
+}
+.menu-open .menu-content{
+  transform: translate3d(calc(100% - 70px), 0px, 0px) !important;
+}
+$menu-width: 200px;
+ion-menu[side=left] .menu-inner {
+    width: 175px;
+}
+
+.selectedMenu{
+  background-color: white !important;
+  .name{
+    color: #040655;
+  }
+  .menuImgs{
+    display: none!important;
+  }
+  .menuImgs1{
+    display: block!important;
+  }
+}
+.paddingTop{
+  margin-top: 45px;
+}
+.lastContent {
+  margin-bottom: 45px;
+}
+.listName{
+  color: #494949;
+  font-weight: 2  00;
+  margin-left: 10px;
+}
+.list-ios > .item-block:first-child {
+    border-top: none !important;
+}
+.list-md > .item-block:last-child, .list-md > .item-wrapper:last-child .item-block {
+    border-bottom: none !important;
+}
+.list-md > .item-block:first-child {
+    border-top: none !important;
+}
+.list-wp > .item-block:last-child, .list-wp > .item-wrapper:last-child .item-block {
+    border-bottom: none !important;
+}
+.list-wp > .item-block:first-child {
+    border-top: none !important;
+}
+.list-ios .item-block .item-inner {
+  border-bottom: transparent !important;
+}
+.item-ios.item-block .item-inner {
+  border-bottom: transparent !important;
+}
+.list-md .item-block .item-inner {
+  border-bottom: transparent !important;
+}
+.item-md.item-block .item-inner {
+  border-bottom: transparent !important;
+}
+.list-wp .item-block .item-inner {
+  border-bottom: transparent !important;
+}
+.item-wp.item-block .item-inner {
+  border-bottom: transparent !important;
+}
+.error-message{
+    color: red !important;
+    text-align: center;
+}
+.toast-success {
+  > div{
+       background-color:#00c851!important;
+   }
+}
+.toast-error {
+  > div{
+    background-color:#ff3547!important;
+  }
+}
+.checkAlertCss .alert-title {
+    margin: 0px;
+    margin-bottom: -30px;
+    text-align: center;
+    padding: 0;
+}
+.checkAlertCss .alert-wrapper {
+    border-radius: 10px;
+    max-width: 280px;
+    background-color: #F3F3F3;
+    -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+}
+.checkAlertCss .alert-message {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #000;
+    font-family: 'Roboto';
+    text-align: center;
+    font-weight: 600;
+    overflow: hidden;
+    padding: 0px 25px 25px !important;
+}
+.newsFeedAlertCss .alert-title {
+    margin: 0px;
+    text-align: center;
+}
+.newsFeedAlertCss .alert-wrapper {
+    border-radius: 10px;
+    max-width: 280px;
+    background-color: #F3F3F3;
+    -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+}
+.newsFeedAlertCss .alert-message {
+    font-size: 16px !important;
+    color: #999;
+    font-family: 'Roboto';
+    text-align: center;
+    margin: 7px;
+    overflow: hidden;
+}
+.newsFeedAlertCss .alert-head {
+    text-align: center !important;
+}
+.newsFeedAlertCss .alert-sub-title {
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    font-family: "Roboto" !important;
+    padding: 0px 15px 0px !important;
+}
+.checkAlertCss .alert-sub-title {
+    font-size: 16px;
+    color: #000;
+    font-family: "Roboto" !important;
+    margin-top: 25px;
+    margin-bottom: -25px;
+    text-align: center;
+    padding: 0px 15px !important;
+}
+p, h3 {
+  font-family: "Roboto" !important;
+}
+.orderAlertCss .alert-sub-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  color: #1E1F20;
+  text-align: center !important;
+}
+.orderAlertCss .alert-title {
+  font-weight: bold;
+  text-align: center !important;
+}
+.orderAlertCss .alert-message {
+  color: #999;
+  font-weight: bold;
+  text-align: center !important;
+}
+.breakageAlertCss .alert-message {
+        margin-top: 15px;
+    font-size: 14px;
+    color: #000;
+    font-family: 'Roboto';
+    text-align: center !important;
+    overflow: hidden;
+}
+.breakageAlertCss .alert-title {
+    margin-top: 12px !important;
+    padding-bottom: 8px;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    text-align: center !important;
+    padding: 5px !important;
+}
+.breakageAlertCss .alert-wrapper {
+    border-radius: 10px !important;
+}
+.breakageAlertCss .alert-button:last-child {
+    border-right: 0;
+    font-weight: bold;
+    color: #040D70;
+}
+// .alert-head {
+//     padding: 0 !important;
+// }
+.certificateAlertCss .alert-wrapper {
+  border-radius: 10px !important;
+  background-color: #F2F2F2;
+}
+.certificateAlertCss .alert-head {
+  text-align: center !important;
+}
+.certificateAlertCss .alert-sub-title {
+    padding: 5px;
+    margin-top: -10px;
+    font-weight: 600;
+    color: #000;
+    font-size: 16px;
+}
+.certificateAlertCss .alert-button{
+  border-top: none;
+    background: #0614AE;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    width: 80%;
+    margin: 10px 30px 30px;
+    border-radius: 100px;
+    height: 30px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 3px 1px -2px rgba(0, 0, 0, 0.3), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,223 @@
+<header title="Newsfeed"> </header>
+
+<ion-content class="paddingTop">
+  <div>
+
+    <ion-slides class="slidesCss">
+      <ion-slide (ionSlideDidChange)="slideChanged()" class="slide-css">
+        <ion-toolbar class="toolbar-color">
+          <div class="divD">
+            <ion-item *ngFor="let group of groupNames;let i=index" class="cust_delay delay" [class.active]="selectedItem == i" (click)="openTab(i, group.value_name)">
+              {{group.group_name}}
+              <ion-badge id="cart-badge" class="badgeOn">{{group.badge}}</ion-badge>
+            </ion-item>
+          </div>
+        </ion-toolbar>
+      </ion-slide>
+      <ion-slide (ionSlideDidChange)="slideChanged()" class="slide-css">
+        <ion-toolbar class="toolbar-color">
+          <div class="divD">
+            <ion-item class="cust_delay delay" (click)="openPrivate(i)" [class.active]="selectedItem == i">
+                  Private &nbsp;&nbsp;<ion-icon name="md-mail" class="iconCss"></ion-icon><ion-badge id="cart-badge" class="badgeOn">16</ion-badge>
+            </ion-item>
+          </div>
+        </ion-toolbar>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  
+  <div class="paddingTopDiv" *ngIf="ifisNotPrivate">
+    <button ion-button class="createEntryBtn" (click)="createNewsfeedEntry()">CREATE ENTRY</button>
+  </div>
+  <div class="paddingTopDiv" *ngIf="ifPrivate">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-7 col-xl-7 class="colinout">
+          <img src="assets/imgs/newsfeed/inbox.png" *ngIf="ifInbox" (click)="createInbox()" class="inout">
+          <img src="assets/imgs/newsfeed/outbox.png" *ngIf="ifOutbox" (click)="createOutbox()" class="inout">
+        </ion-col>
+        <ion-col col-5 col-xl-5 class="colmessage">
+          <button ion-button class="createEntryBtn" (click)="createNewMessage()">NEW MESSAGE</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <br/>
+  <div *ngIf="ifGeneralSelected">
+    <ion-grid *ngFor="let general of generaldetail; let idx = index" class="gridCss" [class.selected]="idx === currentSelected">
+      <ion-row>
+        <ion-col class="topPin">
+          <img src="assets/imgs/newsfeed/toppin.png" class="imagePin" *ngIf="general.pin == '1' && general.important == '0'">
+          <img src="assets/imgs/newsfeed/toppin.png" class="imagePin" *ngIf="general.pin == '1' && general.important == '1'">
+          <img src="assets/imgs/newsfeed/remark.png" class="imagePin" *ngIf="general.pin == '0' && general.important == '1'">
+          <p class="dateCol">{{general.created_at | date: "dd/MM/yyyy HH:mm"}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="downrow" (click)="onClickOfGeneral(idx, general)">
+        <ion-col col-3 col-xl-3 class="imageCol">
+          <ion-row>
+            <ion-col col-12 col-xl-12>
+              <img src="{{general.profile_picture}}" class="imageGen" *ngIf="general.profile_picture !== ''">
+              <img src="assets/imgs/user.png" class="imageGen" *ngIf="general.profile_picture == ''">
+            </ion-col>
+            <ion-col col-12 col-xl-12><p class="nameCol">{{general.first_name}} {{general.last_name}}</p></ion-col>
+            <ion-col col-12 col-xl-12><p class="nameCol1">{{general.current_position}}</p></ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col col-9 col-xl-9>
+          <ion-row>
+            <ion-col col-12><h4 class="titleCol">{{general.title}}</h4></ion-col>
+            <ion-col col-12 class="paraCol">{{general.description}}</ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row *ngIf="general?.photos?.length > 0">
+        <ion-col class="commantCol" *ngFor="let photo of general?.photos;let idx of index;">
+         
+          <img src="assets/imgs/newsfeed/file.png" class="attachment" *ngIf="photo.file_type == 'odt' || photo.file_type == 'pdf' || photo.file_type == 'xlsx' || photo.file_type == 'txt' || photo.file_type == 'docx'" (click)="openfilesinbrowser(photo)">
+          <img src="assets/imgs/newsfeed/image.png" class="attachment" *ngIf="photo.file_type == 'jpg' || photo.file_type == 'png' || photo.file_type == 'jpeg' || photo.file_type == 'mp4'" (click)="openfilesinbrowser(photo)">&nbsp;&nbsp;
+          
+        </ion-col>
+        <b class="commentB">{{general.comments}} Commments</b>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="ifRestaurantSelected">
+    <ion-grid *ngFor="let restaurant of restaurantdetail; let idx = index" class="gridCss" (click)="onClickOfRestaurant(idx)" [class.selected]="idx === currentSelected">
+      <ion-row>
+        <ion-col class="topPin">
+          <img src="{{restaurant.topImage}}" class="imagePin" *ngIf="restaurant.topImage != ''">
+          <p class="dateCol">{{restaurant.datetime}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="downrow">
+        <ion-col col-3 col-xl-3 class="imageCol">
+          <ion-row>
+            <ion-col><img src="{{restaurant.image}}" class="imageGen"></ion-col>
+            <ion-col class="nameCol">{{restaurant.name}}</ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col col-9 col-xl-9>
+          <ion-row>
+            <ion-col col-12><h4 class="titleCol">{{restaurant.title}}</h4></ion-col>
+            <ion-col col-12 class="paraCol">{{restaurant.desc}}</ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="commantCol">
+          <img src="{{restaurant.file}}" class="attachment" *ngIf="restaurant.file != ''">
+          <img src="{{restaurant.imageFile}}" class="attachment" *ngIf="restaurant.imageFile != ''">&nbsp;&nbsp;
+          {{restaurant.comments}} Commments
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="ifDinnerSelected">
+    <ion-grid *ngFor="let dinner of dinnerdetail; let idx = index" class="gridCss" (click)="onClickOfDinner(idx)" [class.selected]="idx === currentSelected">
+      <ion-row>
+        <ion-col class="topPin">
+          <img src="{{dinner.topImage}}" class="imagePin" *ngIf="dinner.topImage != ''">
+          <p class="dateCol">{{dinner.datetime}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="downrow">
+        <ion-col col-3 col-xl-3 class="imageCol">
+          <ion-row>
+            <ion-col><img src="{{dinner.image}}" class="imageGen"></ion-col>
+            <ion-col class="nameCol">{{dinner.name}}</ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col col-9 col-xl-9>
+          <ion-row>
+            <ion-col col-12><h4 class="titleCol">{{dinner.title}}</h4></ion-col>
+            <ion-col col-12 class="paraCol">{{dinner.desc}}</ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="commantCol">
+          <img src="{{dinner.file}}" class="attachment" *ngIf="dinner.file != ''">
+          <img src="{{dinner.imageFile}}" class="attachment" *ngIf="dinner.imageFile != ''">&nbsp;&nbsp;
+          {{dinner.comments}} Commments
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="ifOthersSelected">
+    <ion-grid *ngFor="let others of othersdetail; let idx = index" class="gridCss" (click)="onClickOfOthers(idx)" [class.selected]="idx === currentSelected">
+      <ion-row>
+        <ion-col class="topPin">
+          <!-- <img src="{{others.topImage}}" class="imagePin" *ngIf="others.topImage != ''"> -->
+          <p class="dateCol">{{others.datetime}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="downrow">
+        <ion-col col-3 col-xl-3 class="imageCol">
+          <ion-row>
+            <ion-col><img src="{{others.image}}" class="imageGen"></ion-col>
+            <ion-col class="nameCol">{{others.name}}</ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col col-9 col-xl-9>
+          <ion-row>
+            <ion-col col-12><h4 class="titleCol">{{others.title}}</h4></ion-col>
+            <ion-col col-12 class="paraCol">{{others.desc}}</ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="commantCol">
+          <img src="{{others.file}}" class="attachment" *ngIf="others.file != ''">
+          <img src="{{others.imageFile}}" class="attachment" *ngIf="others.imageFile != ''">&nbsp;&nbsp;
+          {{others.comments}} Commments
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div *ngIf="ifPrivateMessageSelected" style="margin-top: -20px;">
+    <ion-grid *ngFor="let private of privatemessagedetail; let idx = index" (click)="onClickOfPrivateMessage(idx)" class="gridCss selectGrid" [class.selected]="idx === currentSelected">
+      <ion-row>
+        <ion-col class="topPin">
+          <p class="dateCol">{{private.datetime}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="downrow">
+        <ion-col col-3 col-xl-3 class="imageCol">
+          <ion-row>
+            <ion-col><img src="{{private.image}}" class="imageGen"></ion-col>
+            <ion-col class="nameCol">{{private.name}}</ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col col-9 col-xl-9>
+          <ion-row>
+            <ion-col col-12><h4 class="titleCol">{{private.title}}</h4></ion-col>
+            <ion-col col-12 class="paraCol">{{private.desc}}</ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="commantCol">
+          <img src="{{private.file}}" class="attachment" *ngIf="private.file != ''">
+          <img src="{{private.imageFile}}" class="attachment" *ngIf="private.imageFile != ''">&nbsp;&nbsp;
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data..." *ngIf="pagingEnabled"></ion-infinite-scroll-content>
+  </ion-infinite-scroll> 
+  <div *ngIf="!pagingEnabled" class="nopost"> No more post is available.</div>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite1($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more messages..." *ngIf="pagingEnabled1"></ion-infinite-scroll-content>
+  </ion-infinite-scroll> 
+  <div *ngIf="!pagingEnabled1" class="nopost"> No more message is available.</div>
+    <div style="margin-top: 45px;height: 20px;"></div>
+  
+</ion-content>

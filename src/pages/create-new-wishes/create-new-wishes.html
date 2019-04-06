@@ -1,0 +1,46 @@
+<!--
+  Generated template for the CreateNewWishesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Duty Roster"> </header>
+
+<ion-content class="paddingTop">
+	<ion-item class="divCss">
+		<ion-icon name="md-arrow-round-back" class="iconCss" item-start navPop></ion-icon>
+	Create Wishes
+	</ion-item>
+
+	<ion-grid class="gridCss">
+		<p class="headP">Create New Wish</p>
+		<ion-row>
+			<ion-col col-6 col-xl-3 col-lg-3>
+				<p class="dateP">START</p>
+				<ion-item class="itemC">
+				    <ion-datetime class="dateInput" displayFormat="DD/MM/YY" [(ngModel)]="dob" placeholder="DD/MM/YY"></ion-datetime>
+    				<ion-icon name="md-calendar" item-end class="iconP"></ion-icon>
+				</ion-item>
+			</ion-col>
+			<ion-col col-6 col-xl-3 col-lg-3> 
+				<p class="dateP">END</p>
+				<ion-item class="itemC">
+				    <ion-datetime class="dateInput" displayFormat="DD/MM/YY" [(ngModel)]="dob" placeholder="DD/MM/YY"></ion-datetime>
+    				<ion-icon name="md-calendar" item-end class="iconP"></ion-icon>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		
+		<ion-row>
+			<ion-col>
+				<ion-textarea placeholder="Reason" class="textArea"></ion-textarea>
+			</ion-col>
+		</ion-row>
+
+		<ion-item class="lastBtns">
+	    	<button ion-button round class="cancelBtn" (click)="cancelNewWishes()" item-end>CANCEL</button>
+			<button ion-button round class="postBtn" (click)="createNewWish()" item-end>CREATE</button>
+	  </ion-item>
+	</ion-grid>
+	<div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

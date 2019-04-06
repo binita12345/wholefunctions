@@ -1,0 +1,147 @@
+page-sub-study-menu-list {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.toolbar-color{
+		background: #01083C !important;
+    padding: 0px;
+	}
+	.iconCss{
+		font-size: 24px;
+    color: #fff;
+	}
+	.divCss{
+		background-color: #01083c;
+	}
+	.item-md{
+		margin-top: 10px !important;
+	}
+	.pCss{
+		color: #fff;
+		font-family: 'Roboto' !important;
+		font-size: 16px;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+	.searchBar {
+		margin-top: 5px;
+	}
+	.listImg {
+    border-bottom-left-radius: 7px;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    min-height: -webkit-fill-available;
+  }
+  .listRow{
+    border-radius: 7px;
+    background-color: #f3f3f3;
+    margin-top: 15px !important;
+    max-height: 120px;
+    height: 120px;
+    text-align: center;
+    position: relative;
+  }
+  .colImg{
+    padding: 0px;
+  }
+  .gridC{
+  	    width: 95%;
+    margin: auto;
+  }
+  .listH{
+    font-weight: lighter;
+    color: #7D7D7E;
+  }
+  .listP{
+  	    font-size: 12px;
+    font-weight: 500;
+    color: #9B9EA1;
+    bottom: 0px;
+    margin: auto;
+  }
+  .percentBtn{
+		height: 20px !important;
+    color: #000;
+    font-weight: 500;
+    font-size: 12px;
+    background: #fff;
+    font-family: 'Roboto' !important;
+    width: 30px !important;
+    position: absolute;
+    margin: 13px 5px;
+    padding: 0px 20px;
+	}
+	.percentBtn:hover{
+		background-color: #010656 !important;
+	}
+    .green-btn {
+        color: #fff;
+        background: #02EA25;
+    }
+	.btnDiv{
+    position: absolute;
+    height: 120px;
+	}
+	.progr{
+		position: absolute;
+    background: transparent;
+    z-index: 999;
+    width: 100%;
+    margin: auto;
+    color: transparent;
+	}
+    .head {
+        font-weight: 300;
+    width: 98%;
+    margin: auto;
+    color: #4B4C4C;
+    }
+    .colText{
+        display: grid;
+    }
+
+
+	//// Default css
+	.searchbar-md .searchbar-input, .searchbar-ios .searchbar-input, .searchbar-wp .searchbar-input, {
+    padding: 2px 15px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #141414;
+    background-color: #fff;
+    -webkit-box-shadow: none !important;
+	}
+	.searchbar-md .searchbar-clear-icon, .searchbar-ios .searchbar-clear-icon, .searchbar-wp .searchbar-clear-icon {
+    left: 13px !important;
+    top: 0;
+    padding: 0;
+    background-position: center;
+    position: absolute;
+    width: 22px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 22px;
+	}
+	.searchbar-md .searchbar-search-icon, .searchbar-ios .searchbar-search-icon, .searchbar-wp .searchbar-search-icon {
+    right: 10px !important;
+    top: 8px;
+    width: 21px;
+    height: 21px;
+    left: auto;
+	}
+	.searchbar-ios {
+    padding: 0 8px;
+    min-height: 44px;
+    border-top: 0.55px solid transparent;
+    border-bottom: none;
+    background: transparent;
+	}
+	.searchbar-ios.searchbar-left-aligned .searchbar-input, .searchbar-md.searchbar-left-aligned .searchbar-input, .searchbar-wp.searchbar-left-aligned .searchbar-input{
+    padding-left: 40px;
+	}
+}

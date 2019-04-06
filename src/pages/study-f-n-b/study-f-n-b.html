@@ -1,0 +1,65 @@
+<!--
+  Generated template for the StudyFNBPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Learning Platform"> </header>
+
+<ion-content class="paddingTop">
+	<ion-item class="divCss">
+		<ion-icon name="ios-arrow-back" class="iconCss" item-start (click)="gotoBackMenu()"></ion-icon>
+		<p class="pCss">F&B</p>
+	</ion-item>
+
+	<ion-searchbar placeholder="Search" [(ngModel)]="searchTerm" (ionInput)="filterItems($event)" class="searchBar"></ion-searchbar>
+	<ion-grid class="gridC">
+		<h3 class="head">WINE</h3>
+		<ion-row class="listRow" *ngFor="let wine of studyWineLists;let idx = index;" (click)="gotoStudyMenuList(wine)">
+			<progress-bar [progress]="wine.percent" class="progr"></progress-bar>
+			<ion-col col-5 col-xl-5 col-lg-4 class="colImg">
+				<div class="btnDiv">
+					<button ion-button round class="percentBtn" [ngClass]="{'green-btn' : wine.percent == '100'}">{{wine.percent}}%</button>
+					<img src="{{wine.image}}" class="listImg">	
+				</div>
+			</ion-col>
+			<ion-col col-7 col-xl-7 col-lg-8 class="colText">
+				<h3 class="listH">{{wine.name}}</h3>
+				<p class="listP">{{wine.points}} points, {{wine.score}}% Av Score</p>
+			</ion-col>
+		</ion-row>
+		<br/>
+		<br/>
+		<h3 class="head">FOOD</h3>
+		<ion-row class="listRow" *ngFor="let food of studyFoodLists;let idx = index;" (click)="gotoStudyMenuList(food)">
+			<progress-bar [progress]="food.percent" class="progr"></progress-bar>
+			<ion-col col-5 col-xl-5 col-lg-4 class="colImg">
+				<div class="btnDiv">
+					<button ion-button round class="percentBtn" [ngClass]="{'green-btn' : food.percent == '100'}">{{food.percent}}%</button>
+					<img src="{{food.image}}" class="listImg">	
+				</div>
+			</ion-col>
+			<ion-col col-7 col-xl-7 col-lg-8 class="colText">
+				<h3 class="listH">{{food.name}}</h3>
+				<p class="listP">{{food.points}} points, {{food.score}}% Av Score</p>
+			</ion-col>
+		</ion-row>
+		<br/>
+		<br/>
+		<h3 class="head">STANDARD</h3>
+		<ion-row class="listRow" *ngFor="let standard of studyStandardLists;let idx = index;" (click)="gotoStudyMenuList(standard)">
+			<progress-bar [progress]="standard.percent" class="progr"></progress-bar>
+			<ion-col col-5 col-xl-5 col-lg-4 class="colImg">
+				<div class="btnDiv">
+					<button ion-button round class="percentBtn" [ngClass]="{'green-btn' : standard.percent == '100'}">{{standard.percent}}%</button>
+					<img src="{{standard.image}}" class="listImg">	
+				</div>
+			</ion-col>
+			<ion-col col-7 col-xl-7 col-lg-8 class="colText">
+				<h3 class="listH">{{standard.name}}</h3>
+				<p class="listP">{{standard.points}} points, {{standard.score}}% Av Score</p>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

@@ -1,0 +1,65 @@
+header {
+	.menuImg{
+		height: 20px;
+    width: 20px;
+    margin: 0 !important;
+    position: absolute;
+	}
+	.titleCss{
+		color: #fff !important;
+		display: contents;
+	}
+	.itemsCss{
+		background-color: #040D70;
+	}
+	.colTime{
+		display: flex;
+    align-items: center;
+	}
+	.labelCss{
+		color: #fff;
+    display: contents;
+    font-size: 11px;
+	}
+	.profileImg{
+    height: 25px;
+    width: 25px;
+    margin: 0 !important;
+    position: absolute;
+    border-radius: 100px;
+    border: 1.5px solid #fff;
+	}
+	.profilCol{
+		    display: flex;
+    align-items: center;
+    justify-content: center;
+	}
+	.pieImg {
+		height: 16px;
+    width: 16px;
+	}
+
+
+
+	//Default css
+	.header-ios .toolbar-ios:last-child .toolbar-background-ios {
+    border-width: 0 0 0.55px;
+    background-color: #040D70;
+	}
+	.header-md .toolbar-md:last-child .toolbar-background-md {
+    border-width: 0 0 0.55px;
+    background-color: #040D70;
+	}
+	.header-wp .toolbar-wp:last-child .toolbar-background-wp {
+    border-width: 0 0 0.55px;
+    background-color: #040D70;
+	}
+	.toolbar-title-ios, .toolbar-title-md, .toolbar-title-wp {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: white !important;
+    pointer-events: auto;
+    margin-left: -10px;
+	}
+}

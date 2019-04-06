@@ -1,0 +1,52 @@
+<!--
+  Generated template for the AllocationListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="My Department"> </header>
+
+
+<ion-content class="paddingTop">
+	<ion-item class="divCss">
+		<ion-icon name="ios-arrow-back" class="iconCss" item-start navPop></ion-icon>
+		<p class="pCss">ALLOCATION LIST</p>
+	</ion-item>
+	<img src="assets/imgs/mydepartment/AllocationList.jpg" class="clockC">
+	<ion-item>
+		<ion-icon name="md-calendar" (click)="showDatePicker()" item-start class="calendarC"></ion-icon>
+		<p class="dateInput">{{setDate}}</p>
+	</ion-item>
+	<div class="withscroll">
+		<table class="table table-responsive table-bordered">
+	    <tbody>
+        <tr>
+      		<td class="employee-table">Station</td>
+      		<td class="employee-table">Station Waiter</td>
+      		<td class="employee-table">Commis</td>
+        </tr>
+        
+        <tr *ngFor="let employee of employeesArray; let trindex = index">
+        	<td class="employee-table1">{{employee.sub_area}}</td>
+          <td class="employee-col">{{employee.Station}}</td>
+          <td class="employee-col">{{employee.Commis}}</td>
+        </tr>
+	    </tbody>
+		</table>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div>
+		<table>
+	    <tbody>
+	    	<tr *ngFor="let static of staticAlloc; let trindex = index">
+	      	<td class="allocHead">{{static.area}}</td>
+	        <td class="allocName">{{static.employee_name}}</td>
+	      </tr>
+	    </tbody>
+		</table>
+	</div>
+	<div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

@@ -1,0 +1,842 @@
+<!--
+  Generated template for the FAndBPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="My Department"> </header>
+
+
+<ion-content class="paddingTop">
+	<ion-toolbar class="toolbar-color">
+    <ion-segment [(ngModel)]="fAndB" (ionChange)="onfAndBChanged($event)" class="segment">
+      <ion-segment-button value="foodmanu" class="segment-btn">
+        Food Menu
+      </ion-segment-button>
+      <ion-segment-button value="drinkmenu" class="segment-btn">
+        Drink Menu	
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  
+  <div class="divC" navPop>
+  	<ion-icon name="ios-arrow-back" class="iconC"></ion-icon>
+  	<p class="nameC">F&B</p>
+  </div>
+  
+  <div *ngIf="ifFoodMenuSelected">
+  	<div class="divMain">
+	    <ion-searchbar placeholder="Search" [(ngModel)]="searchFood" (ionInput)="filterFoodItems($event)" class="searchBar"></ion-searchbar>
+		  <ion-label class="selLabel">OUTLET</ion-label>
+		  <ion-item class="ionItem">
+		  	<ion-select name="foodoutlet" [(ngModel)]="foodoutlet" (ionChange)="onFoodOutletChange(foodoutlet)" placeholder="All" text-wrap class="selectItem">
+			    <ion-option *ngFor="let foodoutlet of foodOutlets" [value]="foodoutlet.id" [selected]="foodoutlet.id == foodoutlet">{{foodoutlet.name}}</ion-option>
+			  </ion-select>
+			</ion-item>
+			<br/>
+			<ion-label class="selLabel">COURSE</ion-label>
+			<ion-grid>
+				<ion-row>
+					<ion-col col-6 col-xl-6 *ngFor="let course of checkCourses;let idx = index;" class="checkCss">
+						<ion-item class="checkItem">
+							<ion-checkbox [(ngModel)]="course.isChecked" class="chkbox" (click)="selectCourse(course)"></ion-checkbox>
+					    <ion-label class="checkLabel">{{course.name}}</ion-label>
+				    </ion-item>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+
+			<ion-grid>
+				<ion-row class="rowFood" *ngFor="let food of foodMenuLists">
+					<ion-col col-12 col-xl-12 class="colImg">
+						<ion-slides options="slideOpts" class="slideCss" #slides autoplay="3000" loop pager="true">
+				      <ion-slide *ngFor="let slideimage of food?.images">
+				        <img src="{{slideimage.image}}" class="foodImg">
+				      </ion-slide>
+				    </ion-slides>
+					</ion-col>
+						
+					<ion-col col-12 col-xl-12>
+						<b class="descB">{{food.item_name}}</b>
+						<br/>
+						<ion-item class="mainItem">
+							<p item-start>Glutonfree<br>
+								<ion-icon name="md-checkmark" class="trueC" *ngIf="food.glutenfree == '1'"></ion-icon>
+								<img src="assets/imgs/mydepartment/prepare.png" *ngIf="food.glutenfree == '2'" class="prepareC">
+								<ion-icon name="md-close" class="falseC" *ngIf="food.glutenfree == '0'"></ion-icon>
+							</p>
+							<p>Lactosefree<br>
+								<ion-icon name="md-checkmark" class="trueC" *ngIf="food.lacetosefree == '1'"></ion-icon>
+								<img src="assets/imgs/mydepartment/prepare.png" *ngIf="food.lacetosefree == '2'" class="prepareC">
+								<ion-icon name="md-close" class="falseC" *ngIf="food.lacetosefree == '0'"></ion-icon>
+							</p>
+							<p item-end>Veggie<br>
+								<ion-icon name="md-checkmark" class="trueC" *ngIf="food.veggie == '1'"></ion-icon>
+								<img src="assets/imgs/mydepartment/prepare.png" *ngIf="food.veggie == '2'" class="prepareC">
+								<ion-icon name="md-close" class="falseC" *ngIf="food.veggie == '0'"></ion-icon>
+							</p>
+						</ion-item>
+						<ion-item class="mainItem1">
+							<p item-start>Vegan<br>
+								<ion-icon name="md-checkmark" class="trueC" *ngIf="food.vegan == '1'"></ion-icon>
+								<img src="assets/imgs/mydepartment/prepare.png" *ngIf="food.vegan == '2'" class="prepareC">
+								<ion-icon name="md-close" class="falseC" *ngIf="food.vegan == '0'"></ion-icon>
+							</p>
+							<p>Alcohol<br>
+								<ion-icon name="md-checkmark" class="trueC" *ngIf="food.alcohol == '1'"></ion-icon>
+								<img src="assets/imgs/mydepartment/prepare.png" *ngIf="food.alcohol == '2'" class="prepareC">
+								<ion-icon name="md-close" class="falseC" *ngIf="food.alcohol == '0'"></ion-icon>
+							</p>
+						</ion-item>
+
+						<ion-row  *ngFor="let menu of food?.menu">
+							<ion-col col-5 col-xl-5 class="ingname">
+								{{menu.name}}
+							</ion-col>
+							<ion-col col-7 col-xl-7 class="ingdetail">
+								{{menu.value}}
+							</ion-col>
+						</ion-row>
+						<div style="border: 0.55px solid #C7C8CA;"></div>
+						<ion-row>
+							<ion-col col-5 col-xl-5 class="ingname">
+								Price
+							</ion-col>
+							<ion-col col-7 col-xl-7 class="ingdetail">
+								{{food.smaller_price}}€ <b *ngIf="food.larger_price !== ''">(larger portion {{food.larger_price}})€</b>
+							</ion-col>
+						</ion-row>
+					</ion-col>
+				</ion-row>
+
+				<div class="divFood" *ngIf="foodMenuLists.length <= 0">
+					No Foods Available
+				</div>
+			</ion-grid>
+			<ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="scroll == 'foodmenu'">
+		    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more food data..." *ngIf="pagingEnabled"></ion-infinite-scroll-content>
+		  </ion-infinite-scroll>
+		  <div *ngIf="!pagingEnabled && scroll == 'foodmenu'" class="nopost"> No more food data is available.</div>
+		</div>
+  </div>
+
+  <!-- ///////////////////////////////////////  Drink Menu ////////////////////////////////////////////// -->
+  <div *ngIf="ifDrinkMenuSelected">
+    <div class="divMain">
+	    <ion-searchbar placeholder="Search" [(ngModel)]="searchDrink" (ionInput)="filterDrinkItems($event)" class="searchBar"></ion-searchbar>
+		  <ion-label class="selLabel">OUTLET</ion-label>
+		  <ion-item class="ionItem">
+		    <ion-select name="drinkoutlet" [(ngModel)]="drinkoutlet" (ionChange)="onDrinkOutletChange(drinkoutlet)" placeholder="All" text-wrap class="selectItem">
+			    <ion-option *ngFor="let drinkoutlet of drinkOutlets" [value]="drinkoutlet.id" [selected]="drinkoutlet.id == drinkoutlet">{{drinkoutlet.name}}</ion-option>
+			  </ion-select>
+			</ion-item>
+			<br/>
+			<ion-label class="selLabel">SORT OF DRINK</ion-label>
+			<ion-grid>
+				<ion-row>
+					<ion-col col-6 col-xl-6 *ngFor="let drink of checkDrinks" class="checkCss">
+						<ion-item class="checkItem">
+							<ion-checkbox [(ngModel)]="drink.isChecked" class="chkbox" (click)="selectDrink(drink)"></ion-checkbox>
+					    <ion-label class="checkLabel">{{drink.name}}</ion-label>
+				    </ion-item>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+
+			<ion-grid *ngIf="compare">
+				<div *ngFor="let drink of drinkCompareLists;let idx = index;">
+
+					<ion-row class="rowFood" *ngIf="drink.category == '2'">
+						<ion-col col-4 col-xl-4 class="colImg">
+							<div>
+								<ion-slides options="slideOpts" class="slideCss" #slides autoplay="3000" loop pager="true">
+						      <ion-slide *ngFor="let slideimage of drink?.images">
+						        <img src="{{slideimage.image}}" class="whitewineImg">
+						      </ion-slide>
+						    </ion-slides>
+							</div>
+						</ion-col>
+						<ion-col col-8 col-xl-8 class="colDetail">
+							<ion-item class="comB">
+								<button ion-button round class="comBtn" (click)="dontCompareThreeWines(drink, idx)" item-end>DON'T COMPARE</button>
+							</ion-item>
+							<b class="descB">{{drink.name}}</b>
+							<br/>
+							<ion-row>
+								<ion-col col-4 col-xl-4 class="comN">
+									Dryness
+								</ion-col>
+								<ion-col col-8 col-xl-8 class="ingdetail1">
+									dry
+								</ion-col>
+								<ion-col col-4 col-xl-4 class="comN">
+									acidity
+								</ion-col>
+								<ion-col col-8 col-xl-8 class="ratingC">
+									<rating [(ngModel)]="drink.acidity" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+								<ion-col col-4 col-xl-4 class="comN">
+									Body
+								</ion-col>
+								<ion-col col-8 col-xl-8 class="ratingC">
+									<rating [(ngModel)]="drink.body" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+								<ion-col col-4 col-xl-4 class="comN">
+									Finish
+								</ion-col>
+								<ion-col col-8 col-xl-8 class="ratingC">
+									<rating [(ngModel)]="drink.finish" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+							</ion-row>
+							
+						</ion-col>
+
+						<ion-col col-12 col-xl-12 class="colDetail">
+							<div style="border: 0.55px solid #C7C8CA;"></div>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Nose
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.nose}}
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Taste
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.taste}}
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Alcohol
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.alcohol}}
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Soil
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.soil}}
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Price
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.larger_price}}€
+								</ion-col>
+							</ion-row>
+
+							<ion-row class="radioRow">
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Grape<br>
+										<b class="boldName">{{drink.grape}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Country Region<br>
+										<b class="boldName">{{drink.country}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss"> 
+									<br/>
+									<p class="nameCss">Year<br>
+										<b class="boldName">{{drink.year}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Maturation<br>
+										<b class="boldName">{{drink.maturation}}</b>
+									</p>
+								</ion-col>
+							</ion-row>
+						</ion-col>
+					</ion-row>
+
+					<ion-row class="rowFood" *ngIf="drink.category == '1'">
+						<ion-col col-4 col-xl-4 class="colImg">
+							<div>
+								<ion-slides options="slideOpts" class="slideCss" #slides autoplay="3000" loop pager="true">
+						      <ion-slide *ngFor="let slideimage of drink?.images">
+						        <img src="{{slideimage.image}}" class="whitewineImg">
+						      </ion-slide>
+						    </ion-slides>
+							</div>
+						</ion-col>
+						<ion-col col-8 col-xl-8 class="colDetail">
+							<ion-item class="comB">
+								<button ion-button round class="comBtn" (click)="dontCompareThreeWines(drink, idx)" item-end>DON'T COMPARE</button>
+							</ion-item>
+							<b class="descB">{{drink.name}}</b>
+							<br/>
+							<ion-row>
+								<ion-col col-4 col-xl-4 class="comN">
+									Dryness
+								</ion-col>
+								<ion-col col-8 col-xl-8 class="ingdetail1">
+									dry
+								</ion-col>
+								<ion-col col-4 col-xl-4 class="comN">
+									acidity
+								</ion-col>
+								<ion-col col-8 col-xl-8 class="ratingC">
+									<rating [(ngModel)]="drink.acidity" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+								<ion-col col-4 col-xl-4 class="comN">
+									Body
+								</ion-col>
+								<ion-col col-8 col-xl-8 class="ratingC">
+									<rating [(ngModel)]="drink.body" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+								<ion-col col-4 col-xl-4 class="comN">
+									Finish
+								</ion-col>
+								<ion-col col-8 col-xl-8 class="ratingC">
+									<rating [(ngModel)]="drink.finish" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+									</rating>
+								</ion-col>
+								<ion-col col-4 col-xl-4 class="ingname">
+									Tannins
+								</ion-col>
+								<ion-col col-8 col-xl-8 class="ratingC">
+									<rating [(ngModel)]="drink.tannins" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+							</ion-row>
+							
+						</ion-col>
+
+						<ion-col col-12 col-xl-12 class="colDetail">
+							<div style="border: 0.55px solid #C7C8CA;"></div>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Nose
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.nose}}
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Taste
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.taste}}
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Alcohol
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.alcohol}}
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Soil
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.soil}}
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Price
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.larger_price}}€
+								</ion-col>
+							</ion-row>
+
+							<ion-row class="radioRow">
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Grape<br>
+										<b class="boldName">{{drink.grape}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Country Region<br>
+										<b class="boldName">{{drink.country}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss"> 
+									<br/>
+									<p class="nameCss">Year<br>
+										<b class="boldName">{{drink.year}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Maturation<br>
+										<b class="boldName">{{drink.maturation}}</b>
+									</p>
+								</ion-col>
+							</ion-row>
+						</ion-col>
+					</ion-row>
+				</div>
+			</ion-grid>
+
+			<ion-grid>
+				<div *ngFor="let drink of drinkMenuLists;let idx = index;">
+					<ion-row class="rowFood" *ngIf="drink.category == '1'">
+						<ion-col col-12 col-xl-12 class="colImg">
+							<div>
+								<ion-slides options="slideOpts" class="slideCss" #slides autoplay="3000" loop pager="true" *ngIf="ifFoodImage">
+						      <ion-slide *ngFor="let slideimage of drink?.images">
+						        <img src="{{slideimage.image}}" class="whitewineImg">
+						      </ion-slide>
+						    </ion-slides>
+
+								<div class="wineDetailDiv" *ngIf="ifFoodDetails">
+									<ion-row class="pairC" *ngFor="let pairingfood of drink?.pairing_foods">
+										<ion-col col-3 col-xl-3 class="colBG">
+											<img src="{{pairingfood.images}}" class="dprtImg">
+										</ion-col>
+										<ion-col col-9 col-xl-9 class="colBG1">
+											<h6>{{pairingfood.item_name}}</h6>
+											<div *ngFor="let pairmenu of pairingfood?.menu">
+										    <p class="foodP">{{pairmenu.name}} : {{pairmenu.value}}</p>
+									    </div>
+										</ion-col>
+										<ion-col col-12 col-xl-12 class="nopair" *ngIf="pairingfood?.id == ''">
+											No Pairing Foods available
+										</ion-col>
+									</ion-row>
+								</div>
+								<img src="assets/imgs/mydepartment/photo.png" class="toggleC" *ngIf="ifPhoto" (click)="selectPhoto()">
+								<img src="assets/imgs/mydepartment/foodpairing.png" class="toggleC1" *ngIf="ifFoodPairing" (click)="selectFoodPairing()">
+							</div>
+						</ion-col>
+						<ion-item class="btnItem">
+							<button ion-button round class="compareBtn" (click)="compareThreeWines(drink, idx)" item-end>COMPARE</button>
+						</ion-item>
+						<ion-col col-12 col-xl-12 class="colDetail">
+							<b class="descB">{{drink.name}}</b>
+							<br/>
+							<ion-row class="radioRow">
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Grape<br>
+										<b class="boldName">{{drink.grape}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Country Region<br>
+										<b class="boldName">{{drink.country}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss"> 
+									<br/>
+									<p class="nameCss">Year<br>
+										<b class="boldName">{{drink.year}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Maturation<br>
+										<b class="boldName">{{drink.maturation}}</b>
+									</p>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Dryness
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									dry
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									acidity
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ratingC">
+									<rating [(ngModel)]="drink.acidity" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Body
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ratingC">
+									<rating [(ngModel)]="drink.body" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Finish
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ratingC">
+									<rating [(ngModel)]="drink.finish" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Tannins
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ratingC">
+									<rating [(ngModel)]="drink.tannins" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+							</ion-row>
+							<div style="border: 0.55px solid #C7C8CA;"></div>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Nose
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.nose}}
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Taste
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.taste}}
+								</ion-col>
+							</ion-row>
+							<div style="border: 0.55px solid #C7C8CA;"></div>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Alcohol
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.alcohol}}
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Soil
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.soil}}
+								</ion-col>
+							</ion-row>
+							<div style="border: 0.55px solid #C7C8CA;"></div>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Price
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.larger_price}}€
+								</ion-col>
+							</ion-row>
+						</ion-col>
+					</ion-row>
+
+					<ion-row class="rowFood" *ngIf="drink.category == '2'">
+						<ion-col col-12 col-xl-12 class="colImg">
+							<div>
+								<ion-slides options="slideOpts" class="slideCss" #slides autoplay="3000" loop pager="true" *ngIf="ifFoodImage">
+						      <ion-slide *ngFor="let slideimage of drink?.images">
+						        <img src="{{slideimage.image}}" class="whitewineImg">
+						      </ion-slide>
+						    </ion-slides>
+
+								<div class="wineDetailDiv" *ngIf="ifFoodDetails">
+									<ion-row class="pairC" *ngFor="let pairingfood of drink?.pairing_foods">
+										<ion-col col-3 col-xl-3 class="colBG">
+											<img src="{{pairingfood.images}}" class="dprtImg">
+										</ion-col>
+										<ion-col col-9 col-xl-9 class="colBG1">
+											<h6>{{pairingfood.item_name}}</h6>
+											<div *ngFor="let pairmenu of pairingfood?.menu">
+										    <p class="foodP">{{pairmenu.name}} : {{pairmenu.value}}</p>
+									    </div>
+										</ion-col>
+									
+										<ion-col col-12 col-xl-12 class="nopair" *ngIf="pairingfood?.id == ''">
+											No Pairing Foods available
+										</ion-col>
+									</ion-row>
+								</div>
+								<img src="assets/imgs/mydepartment/photo.png" class="toggleC" *ngIf="ifPhoto" (click)="selectPhoto()">
+								<img src="assets/imgs/mydepartment/foodpairing.png" class="toggleC1" *ngIf="ifFoodPairing" (click)="selectFoodPairing()">
+							</div>
+						</ion-col>
+						
+						<ion-item class="btnItem">
+							<button ion-button round class="compareBtn" (click)="compareThreeWines(drink, idx)" item-end>COMPARE</button>
+						</ion-item>
+						<ion-col col-12 col-xl-12 class="colDetail">
+							<b class="descB">{{drink.name}}</b>
+							<br/>
+							<ion-row class="radioRow">
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Grape<br>
+										<b class="boldName">{{drink.grape}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Country Region<br>
+										<b class="boldName">{{drink.country}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss"> 
+									<br/>
+									<p class="nameCss">Year<br>
+										<b class="boldName">{{drink.year}}</b>
+									</p>
+								</ion-col>
+								<ion-col col-6 col-xl-6 col-lg-3 class="radioCss">
+									<p class="nameCss">Maturation<br>
+										<b class="boldName">{{drink.maturation}}</b>
+									</p>
+								</ion-col>
+							</ion-row>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Dryness
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									dry
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									acidity
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ratingC">
+									<rating [(ngModel)]="drink.acidity" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Body
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ratingC">
+									<rating [(ngModel)]="drink.body" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Finish
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ratingC">
+									<rating [(ngModel)]="drink.finish" 
+								        readOnly="true"
+								        max="5" 
+								        emptyStarIconName="radio-button-off" 
+								        halfStarIconName="contrast" 
+								        starIconName="ios-radio-button-on" 
+								        nullable="false" class="starCss">
+								</rating>
+								</ion-col>
+							</ion-row>
+							<div style="border: 0.55px solid #C7C8CA;"></div>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Nose
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.nose}}
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Taste
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.taste}}
+								</ion-col>
+							</ion-row>
+							<div style="border: 0.55px solid #C7C8CA;"></div>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Alcohol
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.alcohol}}
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Soil
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.soil}}
+								</ion-col>
+							</ion-row>
+							<div style="border: 0.55px solid #C7C8CA;"></div>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Price
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.larger_price}}€
+								</ion-col>
+							</ion-row>
+						</ion-col>
+					</ion-row>
+
+					<ion-row class="rowFood" *ngIf="drink.category == '3'">
+						<ion-col col-12 col-xl-12 class="colImg">
+							<ion-slides options="slideOpts" class="slideCss" #slides autoplay="3000" loop pager="true">
+					      <ion-slide *ngFor="let slideimage of drink?.images">
+					        <img src="{{slideimage.image}}" class="foodImg">
+					      </ion-slide>
+					    </ion-slides>
+						</ion-col>
+						<ion-col col-12 col-xl-12>
+							<b class="descB">{{drink.name}}</b>
+							<br/>
+							<ion-item class="mainItem">
+								<p item-start>still {{drink.small_litre}}<br>
+									<b class="boldName">{{drink.smaller_price}}€</b>
+								</p>
+								<p>still  {{drink.large_litre}}<br>
+									<b class="boldName">{{drink.larger_price}}€</b>
+								</p>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+
+					<ion-row class="rowFood" *ngIf="drink.category == '4'">
+						<ion-col col-12 col-xl-12 class="colImg">
+							<ion-slides options="slideOpts" class="slideCss" #slides autoplay="3000" loop pager="true">
+					      <ion-slide *ngFor="let slideimage of drink?.images">
+					        <img src="{{slideimage.image}}" class="foodImg">
+					      </ion-slide>
+					    </ion-slides>
+						</ion-col>
+						<ion-col col-12 col-xl-12>
+							<b class="descB">{{drink.name}}</b>
+							<br/>
+							<ion-item class="mainItem">
+								<p item-start>small<br>
+									<b class="boldName">{{drink.smaller_price}}€</b>
+								</p>
+								<p>large<br>
+									<b class="boldName">{{drink.larger_price}}€</b>
+								</p>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+
+					<ion-row class="rowFood" *ngIf="drink.category == '5'">
+						<ion-col col-12 col-xl-12 class="colImg">
+							<img src="assets/imgs/mydepartment/drink2.jpg" class="foodImg">
+						</ion-col>
+						<ion-col col-12 col-xl-12>
+							<b class="descB">{{drink.name}}</b>
+							<br/>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Recipe
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.recipe}}
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Equipment
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.equipment}}
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Preparation
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.preperation}}
+								</ion-col>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Garnish
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									{{drink.garnish}}
+								</ion-col>
+							</ion-row>
+							<div style="border: 0.55px solid #C7C8CA;"></div>
+							<ion-row>
+								<ion-col col-5 col-xl-5 class="ingname">
+									Price
+								</ion-col>
+								<ion-col col-7 col-xl-7 class="ingdetail1">
+									12€
+								</ion-col>
+							</ion-row>
+						</ion-col>
+					</ion-row>
+				</div>
+
+				<div class="divFood" *ngIf="drinkMenuLists.length <= 0">
+					No Drinks Available
+				</div>
+			</ion-grid>
+
+			
+
+			<ion-infinite-scroll (ionInfinite)="doInfinite1($event)" *ngIf="scroll == 'drinkmenu'">
+		    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more drink data..." *ngIf="pagingEnabled1"></ion-infinite-scroll-content>
+		  </ion-infinite-scroll>
+		  <div *ngIf="!pagingEnabled1 && scroll == 'drinkmenu'" class="nopost"> No more drink data is available.</div>
+		</div>
+  </div>
+
+  <div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

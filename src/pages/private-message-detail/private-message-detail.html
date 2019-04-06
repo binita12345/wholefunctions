@@ -1,0 +1,61 @@
+<!--
+  Generated template for the PrivateMessageDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<header title="Newsfeed"> </header>
+
+<ion-content class="paddingTop">
+	<ion-item class="divCss">
+		<ion-icon name="md-arrow-round-back" class="iconCss" item-start navPop></ion-icon>
+		<p class="pCss">Private Message Detail</p>
+	</ion-item>
+
+	<ion-grid class="gridCss">
+		<ion-row>
+			<ion-col col-12 col-xl-12>
+				<h6 style="margin-top: 0.6rem;">{{designationTitle}}</h6>
+				<p class="upperDetail">Dear {{messageename}}</p>
+				<p class="upperDetail">{{fullMessage}}</p>
+				<p class="upperDetail">Best Regards,</p>
+				<p class="upperDetail">Nethalie Gross <br/>(HR)</p>
+			</ion-col>
+		</ion-row>
+
+		<ion-row>
+  		<ion-col col-5 col-xl-5 *ngFor="let file of filenameArray">
+  			<button class="filesBtn" round outline ion-button>{{file.File_Name}}</button>
+  		</ion-col>
+  		<ion-col col-2 col-xl-2 class="colAdd">
+  			<ion-avatar>
+					<img src="assets/imgs/newsfeed/close.png" class="image" (click)="removeAttachedFile(file)">
+				</ion-avatar>
+  		</ion-col>
+  	</ion-row>
+
+		<div class="divBorder"></div>
+		<br/>
+		<div>
+			<ion-row>
+				<ion-col col-3 col-xl-3 class="colDesc">
+					<img src="assets/imgs/newsfeed/profile.jpg" class="comProfile">
+					<p class="comusername">{{currentusername}}</p>
+					<p class="comuserdesign">{{currentuserdesign}}</p>
+				</ion-col>
+				<ion-col col-9 col-xl-9 class="colText">
+					<div class="divCom">
+						<ion-textarea class="textArea" [(ngModel)]="commentdetail"></ion-textarea>
+					</div>
+				</ion-col>
+			</ion-row>	
+			<ion-item class="lastBtns">
+		    <button ion-button round outline class="imageBtn" (click)="addImageORFile()" item-end>ADD IMAGE/FILE</button>
+				<button ion-button round class="postcommentBtn" (click)="saveAnswer()" item-end>ANSWER</button>
+		  </ion-item>
+		</div>
+	</ion-grid>
+	<div style="margin-bottom: 65px;"></div>
+
+</ion-content>

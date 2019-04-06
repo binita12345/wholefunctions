@@ -1,0 +1,44 @@
+page-study-certificate {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.toolbar-color{
+		background: #01083C !important;
+    padding: 0px;
+	}
+	.item-md{
+		margin-top: 10px !important;
+	}
+	.iconCss{
+		font-size: 24px;
+    color: #fff;
+	}
+	.divCss{
+		background-color: #01083c;
+	}
+	.pCss{
+		color: #fff;
+		font-family: 'Roboto' !important;
+		font-size: 16px;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+	.closeBtn{
+    height: 30px !important;
+    color: #fff;
+    font-weight: 600;
+    background: #0614AE;
+    font-size: 14px;
+    font-family: 'Roboto' !important;
+    width: 140px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  }
+  .closeBtn:hover{
+    background-color: #0614AE !important;
+  }
+  .certImg{
+    width: 90%;
+    margin: auto;
+    display: block;
+  }
+}

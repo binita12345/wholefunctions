@@ -1,0 +1,158 @@
+page-notes {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.segment{
+		background: #01083C !important;
+    padding: 11px;
+    padding-top: 22px;
+	}
+	.toolbar-color{
+		background: #01083C !important;
+    padding: 0px;
+	}
+	.clockC{
+		width: -webkit-fill-available;
+    margin: 15px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+	}
+	.noteBtn{
+		height: 30px !important;
+    color: #fff;
+    font-weight: 600;
+    background: #0614AE;
+    font-size: 14px;
+    font-family: 'Roboto' !important;
+    width: 140px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.noteBtn:hover{
+		background-color: #0614AE !important;
+	}
+	.closeIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E63426;
+    font-size: 25px;
+  }
+  ion-label{
+		white-space: pre-line!important;
+	}
+	.noteRow{
+		background: #F3F3F3;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+	}
+	.noteRow:first-child{
+    margin-top: 0px;
+    font-size: 14px;
+    font-weight: 500;
+	}
+	.noteGrig{
+		width: 96%;
+    margin: auto;
+	}
+	.labelC{
+		margin-left: 5px;
+	}
+  .notecol{
+    text-align: center;
+    padding: 50px;
+  }
+  .dateP{
+    color: #999;
+    margin: 5px;
+  }
+
+
+
+/////DEFAULT CSS
+	.toolbar-title-ios, .toolbar-title-md, .toolbar-title-wp {
+    font-size: 16px;
+    color: white !important;
+	}
+	.segment-ios .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+	}
+	.segment-wp .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+	}
+	.segment-md .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+    margin-bottom: -11px;
+    text-transform: none;
+	}
+	.segment-ios .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    border-color: transparent;
+	}
+	.segment-md .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    margin-bottom: -11px;
+    border-color: transparent;
+	}
+	.segment-wp .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    border-color: transparent;
+	}
+  .segment-md .segment-button ion-icon {
+    font-size: 16px;
+    line-height: 3rem;
+  }
+}

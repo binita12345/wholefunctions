@@ -1,0 +1,56 @@
+<!--
+  Generated template for the CreateNewPrivateMessagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Newsfeed"> </header>
+
+<ion-content class="paddingTop">
+	<ion-item class="divCss">
+		<ion-icon name="md-arrow-round-back" class="iconCss" item-start navPop></ion-icon>
+		<p class="pCss">Create Message</p>
+	</ion-item>
+
+	<ion-grid class="gridCss">
+		<p class="headP">New Message</p>
+		<ion-row>
+
+			<ion-item class="createItem" *ngIf="!ifData">
+				<p item-start>To:</p>
+				<img src="assets/imgs/newsfeed/createMessage.png" class="createImg" item-start (click)="createUserToSendMessage()">
+			</ion-item>
+
+			<ion-item class="createItem" *ngIf="ifData">
+       	<p item-start>To:</p>
+       		<div *ngFor="let user of usersUniqArr">
+		       	<div class="main_photo">
+		          <img src="assets/imgs/newsfeed/close2.png" class="editIcon inlay" (click)="removeSelectedUser(user.id)"/>
+		          <img src="{{user.image}}" class="image" (click)="createUserToSendMessage()">
+		        </div>
+		        <p class="userNameC">{{user.name}}</p>
+		        <p class="desigC">{{user.position}}</p>
+	        </div>
+			</ion-item>
+
+			<ion-col col-6 col-xl-6 class="headlineC">
+				<ion-item class="drpItem">
+					<ion-input type="text" class="ionInput" [(ngModel)]="headline" placeholder="Headline"></ion-input>
+				</ion-item>
+			</ion-col>
+			<ion-col col-6 col-xl-6>
+				<button ion-button round outline class="imageBtn" (click)="addImageORFileToPrivate()">ADD IMAGE OR FILE</button>
+			</ion-col>
+			<ion-col>
+				<ion-textarea placeholder="Your Message" class="textArea" [(ngModel)]="message"></ion-textarea>
+			</ion-col>
+		</ion-row>
+
+		<ion-item class="lastBtns">
+	    	<button ion-button round class="cancelBtn" (click)="cancelNewMessage()" item-end>CANCEL</button>
+			<button ion-button round class="postBtn" (click)="saveNewMessage()" item-end>SEND</button>
+	  </ion-item>
+		
+	</ion-grid>
+	<div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

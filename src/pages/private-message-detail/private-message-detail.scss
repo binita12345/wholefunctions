@@ -1,0 +1,141 @@
+page-private-message-detail {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.iconCss{
+		font-size: 24px;
+    color: #fff;
+	}
+	.divCss{
+		background-color: #01083c;
+	}
+	.pCss{
+		color: #fff;
+		font-family: 'Roboto' !important;
+	}
+	.gridCss{
+		background: #f3f3f3;
+    width: 90%;
+    margin: auto;
+    border-radius: 7px;
+    margin-top: 15px;
+	}
+	.upperDetail{
+		color: #9A9DA0;
+    font-family: 'Roboto' !important;
+	}
+	.imageBtn{
+		height: 30px !important;
+    width: 100%;
+    border-color: #C3C5C6;
+    color: #9c9c9c;
+    font-weight: 600;
+    font-size: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.imageBtn:hover{
+		background-color: transparent !important;
+	}
+	.postcommentBtn{
+		height: 30px !important;
+    width: 100%;
+    color: #fff;
+    font-weight: 600;
+    font-size: 10px;
+    background: #0614AE;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.postcommentBtn:hover{
+		background-color: #0614AE !important;
+	}
+	.lastBtns{
+		background-color: transparent;
+	}
+	.comProfile{
+		height: 50px;
+    width: 100%;
+    max-width: 50px;
+    border-radius: 100px;
+    margin: auto;
+	}
+	.comusername{
+		color: #9A9DA0;
+    font-family: 'Roboto' !important;
+		font-size: 12px;
+		margin-top: 3px;
+		text-align: center;
+	}
+	.comuserdesign{
+		color: #9A9DA0;
+    font-family: 'Roboto' !important;
+		font-size: 11px;
+		margin-top: -10px;
+		text-align: center;
+	}
+	.colDesc{
+		padding-left: 0px;
+    padding-right: 0px;
+    display: grid;
+    align-items: center;
+	}
+	.divCom{
+		background: #fff;
+		border-radius: 5px;
+		width: 100%;
+	}
+	.textArea{
+		padding: 0px 8px 8px 0px;
+		margin: 5px 0px 0px 10px;
+	}
+	.colText{
+		margin-top: -8px;
+	}
+	.divBorder{
+		border: 0.8px solid #C7C8CA;
+	}
+	.filesBtn{
+		height: 27px !important;
+    width: 100%;
+    border-color: #C3C5C6;
+    color: #9c9c9c;
+    font-weight: 600;
+    font-size: 10px;
+    text-transform: none;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.image {
+    margin: auto;
+    height: 35px;
+    width: 35px;
+    border-radius: 100px;
+    box-shadow: none;
+    display: block;
+	}
+	.colAdd{
+		display: flex;
+    align-items: center;
+    justify-content: center;
+	}
+	.image{
+		margin: auto;
+    height: 27px;
+    width: 27px;
+    border-radius: 100px;
+    box-shadow: none;
+    display: block;
+	}
+
+
+	//default css
+	.text-input-ios, .text-input-md, .text-input-wp {
+    margin: 11px 8px 11px 1px;
+    padding: 8px 0px 1px;
+    color: #999;
+    width: calc(100% - 8px);
+    font-size: 12px;
+    font-weight: 500;
+	}
+	.item-md{
+		margin-top: 10px !important;
+	}
+}

@@ -1,0 +1,101 @@
+<!--
+  Generated template for the CreateNewCalendarEventPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Calendar"> </header>
+
+<ion-content class="paddingTop">
+	<ion-item class="divCss">
+		<ion-icon name="md-arrow-round-back" class="iconCss" item-start navPop></ion-icon>
+	Create Event
+	</ion-item>
+
+	<ion-grid class="gridCss">
+		<p class="headP">Create New Event</p>
+		<ion-row>
+			<ion-col>
+				<p class="dateP">START</p>
+				<div class="divC">
+					<ion-item class="itemC">
+					    <ion-datetime class="dateInput" displayFormat="DD/MM/YY" [(ngModel)]="startDate" placeholder="DD/MM/YY"></ion-datetime>
+	    				<ion-icon name="md-calendar" item-end class="iconP"></ion-icon>
+					</ion-item>
+					<ion-item class="itemC2">
+						<ion-datetime class="dateInput" displayFormat="hh:mm:ss" [(ngModel)]="startTime" placeholder="hh:mm"></ion-datetime>
+					</ion-item>
+				</div>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col> 
+				<p class="dateP">END</p>
+				<div class="divC">
+					<ion-item class="itemC">
+					    <ion-datetime class="dateInput" displayFormat="DD/MM/YY" [(ngModel)]="endDate" placeholder="DD/MM/YY"></ion-datetime>
+	    				<ion-icon name="md-calendar" item-end class="iconP"></ion-icon>
+					</ion-item>
+					<ion-item class="itemC2">
+						<ion-datetime class="dateInput" displayFormat="hh:mm:ss" [(ngModel)]="endTime" placeholder="hh:mm"></ion-datetime>
+					</ion-item>
+				</div>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col class="headlineC" col-6 col-xl-6>
+				<ion-item class="drpItem">
+					<ion-input type="text" class="ionInput" [(ngModel)]="headline" placeholder="Headline"></ion-input>
+				</ion-item>
+			</ion-col>
+			<ion-col col-6 col-xl-6>
+				<ion-item class="drpItem">
+					<ion-select name="period" [(ngModel)]="period" (ionChange)="onPeriodChange(period)" placeholder="Period" text-wrap class="selectItem1">
+					    <ion-option value="daily">Daily</ion-option>
+					    <ion-option value="weekly">Weekly</ion-option>
+					    <ion-option value="monthly">Monthly</ion-option>
+					    <ion-option value="yearly">Yearly</ion-option>
+					  </ion-select>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-textarea placeholder="Description" class="textArea" [(ngModel)]="eventDesc"></ion-textarea>
+			</ion-col>
+		</ion-row>
+		<br/>
+		<ion-row class="postCss">
+			<ion-col>
+				Event Type:
+				<br/>
+				<img src="assets/imgs/calendar/business.png" *ngIf="ifBusiness" (click)="createBusiness()" class="indepart">
+				<img src="assets/imgs/calendar/personal.png" *ngIf="ifPersonal" (click)="createPersonal()" class="indepart">
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-12 col-xl-6 col-lg-6>
+				<button ion-button round outline class="imageBtn" (click)="addImageORFileToEntry()">ADD IMAGE OR FILE</button>
+			</ion-col>
+		</ion-row>
+		
+    <ion-row>
+    	<ion-col>
+				<ion-item class="drpItem">
+					<ion-select name="people" [(ngModel)]="people" (ionChange)="onPeopleChange(people)" placeholder="Select People To Invite" text-wrap class="selectItem1" multiple="true">
+				    <ion-option *ngFor="let people of userLists" [value]="people.id" [selected]="people.checked">{{people.first_name}} {{people.last_name}}</ion-option>
+				  </ion-select>
+				</ion-item>
+			</ion-col>
+		</ion-row>  
+		<br/>
+		<div class="error-message">
+			    {{error}}
+			  </div>                     
+		<ion-item class="lastBtns">
+	    	<button ion-button round class="cancelBtn" (click)="cancelNewEvent()" item-end>CANCEL</button>
+			<button ion-button round class="postBtn" (click)="createNewEvent()" item-end>CREATE</button>
+	  </ion-item>
+	</ion-grid>
+	<div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

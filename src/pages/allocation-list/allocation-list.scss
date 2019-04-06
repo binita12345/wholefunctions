@@ -1,0 +1,103 @@
+page-allocation-list {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.iconCss{
+		font-size: 24px;
+    color: #fff;
+	}
+	.divCss{
+		background-color: #01083c;
+	}
+	.item-md{
+		margin-top: 10px !important;
+	}
+	.clockC{
+		width: -webkit-fill-available;
+    margin: 15px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+	}
+	.calendarC{
+		color: #0F2BB2;
+    font-size: 30px;
+	}
+	.dateInput{
+		padding: 0px;
+    color: #1d2ca4;
+    font-size: 20px;
+    font-family: 'Roboto' !important;
+    font-weight: lighter;
+	}
+	.employee-table{
+		min-width: 150px;
+		padding: 16px;
+    background: #0614AE;
+    color: #fff;
+    line-height: 10px;
+    border: 5px solid;
+    font-size: 16px;
+	}
+	.employee-table1{
+		min-width: 150px;
+    padding: 12px;
+    background: #fff;
+    color: #000;
+    line-height: 10px;
+    border-bottom: 1px solid #A2A5A7;
+    border-left: 5px solid #fff;
+    border-right: 5px solid #fff;
+    font-size: 16px;
+	}
+	.employee-col{
+		padding: 16px;
+    background: #F3F3F3;
+    color: #000;
+    line-height: 10px;
+    border: 5px solid #fff;
+    text-align: center;
+    font-size: 16px;
+	}
+	.allocHead{
+		min-width: 150px;
+    padding: 12px;
+    background: #fff;
+    color: #28282A;
+    line-height: 10px;
+    border-left: 5px solid #fff;
+    border-right: 5px solid #fff;
+    font-size: 16px;
+	}
+	.allocName{
+		font-weight: 500;
+    color: #28282A;
+	}
+	.withscroll {
+		width: fixed;
+		overflow-x: scroll;
+		white-space: nowrap;
+	}
+
+
+
+	.withscroll::-webkit-scrollbar {
+	  nwidth: 3px;
+	  height: 3px;
+	}
+
+	/* Track */
+	.withscroll::-webkit-scrollbar-track {
+	  backgroud: #f1f1f1; 
+	}
+	 
+	/* Handle */
+	.withscroll::-webkit-scrollbar-thumb {
+	  background: #0F2BB2; 
+	}
+
+	/* Handle on hover */
+	.withscroll::-webkit-scrollbar-thumb:hover {
+	  background: #0F2BB2; 
+	}
+}

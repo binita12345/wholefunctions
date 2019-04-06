@@ -1,0 +1,68 @@
+<!--
+  Generated template for the MyDepartmentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<header title="My Department"></header>
+
+<ion-content class="paddingTop">
+	<div class="divCss"></div>
+	<br/>
+	<h3 class="head">FAVORITES</h3>
+	<ion-grid class="lastContent">
+		<ion-item class="itemBG" (click)="toFandB()">
+			<ion-thumbnail item-start class="thumbnailImg">
+	      <img src="assets/imgs/mydepartment/fnb.jpg" class="dprtImg">
+	    </ion-thumbnail>
+	    <p class="para">F & B</p>
+    </ion-item>
+    <br/>
+			
+		<ion-item class="itemBG" (click)="toRequisition()">
+			<ion-thumbnail item-start class="thumbnailImg">
+	      <img src="assets/imgs/mydepartment/requisition.jpg" class="dprtImg">
+	    </ion-thumbnail>
+	    <p class="para">Requisition</p>
+    </ion-item>
+    <br/>
+
+		<ion-item class="itemBG" (click)="toGuestPreferences()">
+			<ion-thumbnail item-start class="thumbnailImg">
+	      <img src="assets/imgs/mydepartment/guest.jpg" class="dprtImg">
+	    </ion-thumbnail>
+	    <p class="para">Guest Preferences</p>
+    </ion-item>
+    <br/>
+
+		<ion-item class="itemBG" (click)="toBreakage()">
+			<ion-thumbnail item-start class="thumbnailImg">
+	      <img src="assets/imgs/mydepartment/breakage.jpg" class="dprtImg">
+	    </ion-thumbnail>
+	    <p class="para">Breakage</p>
+    </ion-item>
+    <br/>
+			
+		<h3 class="listName">ALL TOOLS</h3>
+		<ion-row>
+			<ion-col col-6 col-xl-6>
+				<ion-item class="itemBGall" (click)="toAllocationList()">
+					<ion-thumbnail item-start class="thumbnailImg">
+			      <img src="assets/imgs/mydepartment/alloclist.jpg" class="dprtImgall">
+			    </ion-thumbnail>
+			    <p class="paraall">Allocation List</p>
+		    </ion-item>
+			</ion-col>
+			<ion-col col-6 col-xl-6>
+				<ion-item class="itemBGall" (click)="toCleaningPlan()">
+					<ion-thumbnail item-start class="thumbnailImg">
+			      <img src="assets/imgs/mydepartment/cleanplan.jpeg" class="dprtImgall">
+			    </ion-thumbnail>
+			    <p class="paraall">Cleaning Plan</p>
+		    </ion-item>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>

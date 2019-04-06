@@ -1,0 +1,235 @@
+page-create-new-breakage {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.iconCss{
+		font-size: 24px;
+    color: #fff;
+	}
+	.divCss{
+		background-color: #01083c;
+	}
+	.item-md{
+		margin-top: 10px !important;
+	}
+	.pCss{
+		color: #fff;
+		font-family: 'Roboto' !important;
+		font-size: 16px;
+		font-weight: 400;
+	}
+	.gridCss{
+		    background: #f3f3f3;
+    width: 96%;
+    margin: auto;
+    border-radius: 7px;
+    margin-top: 15px;
+    padding: 12px;
+	}
+	.headP{
+		color: #494949;
+    font-size: 20px;
+    font-family: 'Roboto' !important;
+    font-weight: lighter;
+    line-height: 0px;
+	}
+	.thumbnailImg{
+		margin: 0px !important;
+	}
+	.dprtImg{
+		height: 80px !important;
+		width: 100px !important;
+	}
+	.itemBG{
+		background-color: #F2F2F2;
+    border-radius: 6px;
+    padding: 0px;
+    text-align: center;
+    width: 94%;
+    margin: auto;
+	}
+	.para{
+		font-size: 20px;
+    color: #5C5FA5;
+    font-family: "Roboto" !important;
+	}
+	.listRow{
+    background: #fff;
+    border-radius: 8px;
+    height: 50px;
+    margin-top: 5px !important;
+  }
+  .listRow:last-child {
+    border-top: none !important;
+    margin-bottom: 10px !important;
+  }
+  .listRow:hover { 
+    border: 2px solid #0614AE !important;
+    border-radius: 0px;
+  }
+  .listCol{
+    padding: 0px;
+  }
+  .listImg {
+    height: 50px;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    width: 100%;
+    object-fit: cover;
+    height: -webkit-fill-available;
+	}
+	.listcol5{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: flex;
+    align-items: center;
+  }
+  .listGrid{
+  	padding: 0px;
+    background: #fff;
+    border-radius: 7px;
+    overflow: scroll;
+    height: 250px;
+    max-height: 250px;
+    display: inline-block;
+  }
+  .gridText{
+    padding: 0px;
+    background: #fff;
+    border-radius: 7px;
+    margin-top: 15px;
+  }
+  .textArea{
+		background: #fff;
+    color: #000;
+    font-family: Roboto;
+    font-weight: 400;
+    margin-top: -5px;
+	}
+	.rowData{
+		color: #999;
+    font-size: 11px;
+	}
+	.cancelBtn{
+		height: 30px !important;
+    width: 120px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px !important;
+    background: #E3312C;
+    font-family: 'Roboto' !important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.cancelBtn:hover{
+		background-color: #E3312C !important;
+	}
+	.addBtn{
+		height: 30px !important;
+    width: 120px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px !important;
+    background: #0614AE;
+    font-family: 'Roboto' !important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.addBtn:hover{
+		background-color: #0614AE !important;
+	}
+	.lastBtns{
+		background-color: transparent;
+	}
+	.inputC{
+		background: #fff;
+    padding: 0px;
+    margin-top: 8px;
+    height: 30px;
+    width: inherit;
+	}
+	.iconP{
+		font-size: 20px;
+    display: contents;
+	}
+	.dateInput{
+		padding: 0px;
+		font-size: 14px;
+		font-family: 'Roboto' !important;
+	}
+	.itemC{
+		min-height: 30px;
+		margin-top: 8px;
+	}
+  .listDiv{
+    padding: 0px;
+    background: #fff;
+    border-radius: 7px;
+    overflow: scroll;
+    height: 250px;
+    max-height: 250px;
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+
+	///Default css
+	.searchbar-md .searchbar-input, .searchbar-ios .searchbar-input, .searchbar-wp .searchbar-input, {
+    padding: 2px 15px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #141414;
+    background-color: #fff;
+    -webkit-box-shadow: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+	}
+	.searchbar-md .searchbar-clear-icon, .searchbar-ios .searchbar-clear-icon, .searchbar-wp .searchbar-clear-icon {
+    left: 13px !important;
+    top: 0;
+    padding: 0;
+    background-position: center;
+    position: absolute;
+    width: 22px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 22px;
+	}
+	.searchbar-md .searchbar-search-icon, .searchbar-ios .searchbar-search-icon, .searchbar-wp .searchbar-search-icon {
+    right: 10px !important;
+    top: 7px;
+    width: 21px;
+    height: 21px;
+    left: auto;
+	}
+	.searchbar-ios, .searchbar-md, .searchbar-wp {
+    padding: 0 0px;
+    min-height: 44px;
+    border-top: 0.55px solid transparent;
+    border-bottom: none;
+    background: transparent;
+	}
+	.searchbar-ios.searchbar-left-aligned .searchbar-input,
+	.searchbar-md.searchbar-left-aligned .searchbar-input,
+	.searchbar-wp.searchbar-left-aligned .searchbar-input {
+    padding-left: 40px;
+	}
+	textarea.text-input {
+    display: block;
+    padding: 0px 0px 25px 5px;
+	}
+	.text-input {
+    margin: 7px 0px 9px 9px;
+    padding: 0;
+    width: calc(100% - 8px);
+    color: #1E1F20;
+	}
+}

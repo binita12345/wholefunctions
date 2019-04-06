@@ -1,0 +1,168 @@
+page-maintenance {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.divCss{
+		height: 40px;
+		background-color: #02073C;
+	}
+	.toolbar-color{
+		background: #01083C !important;
+    padding: 0px;
+	}
+	.searchBar{
+		margin-top: 10px;
+	}
+	.entryBtn{
+    height: 30px !important;
+    width: 115px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px !important;
+    background: #0614AE;
+    font-family: 'Roboto' !important;
+    float: right;
+    margin-right: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.entryBtn:hover{
+		background-color: #0614AE !important;
+	}
+	.withscroll {
+		width: fixed;
+		overflow-x: scroll;
+		white-space: nowrap;
+	}
+	.withscroll::-webkit-scrollbar {
+	  nwidth: 3px;
+	  height: 3px;
+	}
+	/* Track */
+	.withscroll::-webkit-scrollbar-track {
+	  backgroud: #f1f1f1; 
+	}
+	/* Handle */
+	.withscroll::-webkit-scrollbar-thumb {
+	  background: #0F2BB2; 
+	}
+	/* Handle on hover */
+	.withscroll::-webkit-scrollbar-thumb:hover {
+	  background: #0F2BB2; 
+	}
+	.item-md{
+		margin-top: 10px !important;
+	}
+	.headerH{
+		min-width: 150px;
+		padding: 16px;
+    background: #0614AE;
+    color: #fff;
+    line-height: 10px;
+    border: 5px solid;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: center;
+	}
+	.headerL{
+		min-width: 320px;
+		padding: 16px;
+    background: #0614AE;
+    color: #fff;
+    line-height: 10px;
+    border: 5px solid;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: center;
+	}
+	.headerM {
+		min-width: 180px;
+		padding: 16px;
+    background: #0614AE;
+    color: #fff;
+    line-height: 10px;
+    border: 5px solid;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: center;
+	}
+	.headerHCell{
+    padding: 12px;
+    background: #F3F3F3;
+    color: #1E1F20;
+    border: 5px solid #fff;
+    line-height: 10px;
+    font-size: 16px;
+	}
+	.headerLCell{
+    padding: 12px;
+    background: #F3F3F3;
+    color: #1E1F20;
+    border: 5px solid #fff;
+    line-height: 10px;
+    font-size: 16px;
+	}
+	.headerMCell{
+    padding: 12px;
+    background: #F3F3F3;
+    color: #1E1F20;
+    border: 5px solid #fff;
+    line-height: 10px;
+    font-size: 16px;
+	}
+  .norecord{
+    background: #f3f3f3;
+    text-align: center;
+    padding: 40px;
+    width: 94%;
+    margin: auto;
+    border-radius: 7px;
+  }
+	
+
+	//// Default css
+	.searchbar-md .searchbar-input, .searchbar-ios .searchbar-input, .searchbar-wp .searchbar-input, {
+    padding: 2px 15px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #141414;
+    background-color: #fff;
+    -webkit-box-shadow: none !important;
+	}
+	.searchbar-md .searchbar-clear-icon, .searchbar-ios .searchbar-clear-icon, .searchbar-wp .searchbar-clear-icon {
+    left: 13px !important;
+    top: 0;
+    padding: 0;
+    background-position: center;
+    position: absolute;
+    width: 22px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 22px;
+	}
+	.searchbar-md .searchbar-search-icon, .searchbar-ios .searchbar-search-icon, .searchbar-wp .searchbar-search-icon {
+    right: 5px !important;
+    top: 12px;
+    width: 21px;
+    height: 21px;
+    left: auto;
+	}
+	.searchbar-ios {
+    padding: 0 8px;
+    min-height: 44px;
+    border-top: 0.55px solid transparent;
+    border-bottom: none;
+    background: transparent;
+	}
+	.searchbar-ios.searchbar-left-aligned .searchbar-input, .searchbar-md.searchbar-left-aligned .searchbar-input, .searchbar-wp.searchbar-left-aligned .searchbar-input{
+    padding-left: 40px;
+	}
+	.toolbar-title-ios, .toolbar-title-md, .toolbar-title-wp {
+    font-size: 16px;
+    color: white !important;
+	}
+}

@@ -1,0 +1,101 @@
+<!--
+  Generated template for the CleaningPlanPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="My Department"> </header>
+
+
+<ion-content class="paddingTop">
+	<ion-toolbar class="toolbar-color">
+    <ion-segment [(ngModel)]="cleaning" (ionChange)="onCleaningChanged($event)" class="segment">
+      <ion-segment-button value="restaurant" class="segment-btn">
+        Restaurant
+      </ion-segment-button>
+      <ion-segment-button value="bar" class="segment-btn">
+        Bar
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+	<div class="divC" navPop>
+  	<ion-icon name="ios-arrow-back" class="iconC"></ion-icon>
+  	<p class="nameP">CLEANING</p>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <div *ngIf="ifRestaurantSelected">
+  	<ion-grid>
+			<ion-row>
+				<ion-col col-2 col-xl-4 class="col1">
+				</ion-col>
+				<ion-col class="col4">
+					<ion-icon name="ios-arrow-back" (click)="decreaseDay()" class="decDate"></ion-icon>
+					{{startDate}} - {{endDate}}
+					<ion-icon name="ios-arrow-forward" (click)="increaseDay()" class="incDate"></ion-icon>
+				</ion-col>
+				<ion-col col-2 col-xl-4 class="col3">
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+  	<div class="withscroll">
+			<table class="table table-responsive table-bordered">
+		    <tbody>
+	        <tr>
+	      		<td class="HeadMain">Week {{startDate}} - {{endDate}}</td>
+	      		<td *ngFor="let week of weekDays" class="headName">{{week.name}}</td>
+	        </tr>
+	        <tr *ngFor="let cleaning of cleaningArray; let trindex = index">
+	        	<td class="cleanNames">{{cleaning.area_name}}</td>
+	        	<td class="cleanC" *ngIf="cleaning.Monday == 'greybox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Monday}}</td>
+	        	<td class="cleanColorBlue" *ngIf="cleaning.Monday == 'bluebox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Monday}}</td>
+	        	<td class="cleanColorGreen" *ngIf="cleaning.Monday == 'greenbox'">{{cleaning.Monday}}</td>
+	        	<td class="cleanColorRed" *ngIf="cleaning.Monday == 'redbox'">{{cleaning.Monday}}</td>
+
+	          <td class="cleanC" *ngIf="cleaning.Tuesday == 'greybox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Tuesday}}</td>
+	          <td class="cleanColorBlue" *ngIf="cleaning.Tuesday == 'bluebox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Tuesday}}</td>
+	        	<td class="cleanColorGreen" *ngIf="cleaning.Tuesday == 'greenbox'">{{cleaning.Tuesday}}</td>
+	        	<td class="cleanColorRed" *ngIf="cleaning.Tuesday == 'redbox'">{{cleaning.Tuesday}}</td>
+
+	          <td class="cleanC" *ngIf="cleaning.Wednesday == 'greybox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Wednesday}}</td>
+	          <td class="cleanColorBlue" *ngIf="cleaning.Wednesday == 'bluebox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Wednesday}}</td>
+	        	<td class="cleanColorGreen" *ngIf="cleaning.Wednesday == 'greenbox'">{{cleaning.Wednesday}}</td>
+	        	<td class="cleanColorRed" *ngIf="cleaning.Wednesday == 'redbox'">{{cleaning.Wednesday}}</td>
+
+	          <td class="cleanC" *ngIf="cleaning.Thusday == 'greybox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Thusday}}</td>
+	          <td class="cleanColorBlue" *ngIf="cleaning.Thusday == 'bluebox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Thusday}}</td>
+	        	<td class="cleanColorGreen" *ngIf="cleaning.Thusday == 'greenbox'">{{cleaning.Thusday}}</td>
+	        	<td class="cleanColorRed" *ngIf="cleaning.Thusday == 'redbox'">{{cleaning.Thusday}}</td>
+
+	          <td class="cleanC" *ngIf="cleaning.Friday == 'greybox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Friday}}</td>
+	          <td class="cleanColorBlue" *ngIf="cleaning.Friday == 'bluebox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Friday}}</td>
+	        	<td class="cleanColorGreen" *ngIf="cleaning.Friday == 'greenbox'">{{cleaning.Friday}}</td>
+	        	<td class="cleanColorRed" *ngIf="cleaning.Friday == 'redbox'">{{cleaning.Friday}}</td>
+
+	          <td class="cleanC" *ngIf="cleaning.Saturday == 'greybox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Saturday}}</td>
+	          <td class="cleanColorBlue" *ngIf="cleaning.Saturday == 'bluebox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Saturday}}</td>
+	        	<td class="cleanColorGreen" *ngIf="cleaning.Saturday == 'greenbox'">{{cleaning.Saturday}}</td>
+	        	<td class="cleanColorRed" *ngIf="cleaning.Saturday == 'redbox'">{{cleaning.Saturday}}</td>
+
+	          <td class="cleanC" *ngIf="cleaning.Sunday == 'greybox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Sunday}}</td>
+	          <td class="cleanColorBlue" *ngIf="cleaning.Sunday == 'bluebox'" (click)="updateCleaningStatus(cleaning)">{{cleaning.Sunday}}</td>
+	        	<td class="cleanColorGreen" *ngIf="cleaning.Sunday == 'greenbox'">{{cleaning.Sunday}}</td>
+	        	<td class="cleanColorRed" *ngIf="cleaning.Sunday == 'redbox'">{{cleaning.Sunday}}</td>
+
+	        </tr>
+		    </tbody>
+			</table>
+		</div>
+
+		<br/>
+  	<div class="norecord" *ngIf="noRecord">
+      {{error}}
+    </div>
+  </div>
+
+  <div *ngIf="ifBarSelected">
+  	No Content For Bar
+  </div>
+  <div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

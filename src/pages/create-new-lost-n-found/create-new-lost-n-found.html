@@ -1,0 +1,67 @@
+<!--
+  Generated template for the CreateNewLostNFoundPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<header title="Lost & Found"> </header>
+
+<ion-content class="paddingTop">
+	<div class="divCss"></div>
+	<ion-grid class="gridCss">
+		<p class="headP">Create New Lost & Found</p>
+		
+		<ion-row>
+			<ion-col col-6 col-xl-6 class="headlineC">
+				<ion-item class="drpItem">
+					<ion-input type="text" class="ionInput" [(ngModel)]="lostitem" value="{{lostitem}}" placeholder="Lost Item"></ion-input>
+				</ion-item>
+			</ion-col>
+			<ion-col col-6 col-xl-6 class="addimageC">
+				<button ion-button round outline class="imageBtn" (click)="addImageORFileToLost()" accept="image/*,application/pdf">ADD IMAGE OR FILE</button>
+			</ion-col>
+
+			<ion-col col-5 col-xl-5>
+				<ion-item class="drpItem">
+					<ion-input type="text" class="ionInput" [(ngModel)]="location" value="{{location}}" placeholder="Location"></ion-input>
+				</ion-item>
+			</ion-col>
+			<ion-col col-4 col-xl-4 class="dateCol">
+				<ion-item class="dateInput">
+			    <ion-datetime class="dateInput1" displayFormat="DD/MM/YY" [(ngModel)]="dob" placeholder="{{dob}}"></ion-datetime>
+				</ion-item>
+			</ion-col>
+			<ion-col col-3 col-xl-3>
+				<ion-item class="drpItem">
+			    <ion-datetime class="dateInput2" displayFormat="hh:mm" [(ngModel)]="time" placeholder="{{time}}"></ion-datetime>
+				</ion-item>
+			</ion-col>
+
+			<ion-col col-12 col-xl-12>
+				<ion-textarea placeholder="Description" class="textArea" value="{{description}}" [(ngModel)]="description"></ion-textarea>
+			</ion-col>
+
+			<ion-col col-6 col-xl-6>
+				<ion-item class="drpItem">
+					<ion-input type="text" class="ionInput" [(ngModel)]="owner" placeholder="Owner" value="{{owner}}"></ion-input>
+				</ion-item>
+			</ion-col>
+			<ion-col col-6 col-xl-6>
+				<ion-item class="drpItem">
+					<ion-input type="text" class="ionInput" [(ngModel)]="ownerroom" placeholder="Owner's roomNo." value="{{ownerroom}}"></ion-input>
+				</ion-item>
+			</ion-col>
+		</ion-row>
+
+		<div class="error-message">
+	    {{error}}
+	  </div>
+		<ion-item class="lastBtns">
+	    	<button ion-button round class="cancelBtn" (click)="cancelNewLost()" item-end>CANCEL</button>
+			<button ion-button round class="saveBtn" (click)="createNewLost()" item-end>POST</button>
+	  </ion-item>
+	  
+	</ion-grid>
+	<div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

@@ -1,0 +1,69 @@
+<!--
+  Generated template for the DutyRosterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Duty Roster"></header>
+
+<ion-content class="paddingTop">
+	<br/>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-5 col-xl-5 class="col1">
+				<ion-icon name="ios-arrow-back" (click)="decreaseDay()"></ion-icon>
+			</ion-col>
+			<ion-col col-2 col-xl-2 class="col2">
+				<ion-icon name="md-calendar" (click)="showDatePicker()"></ion-icon>
+			</ion-col>
+			<ion-col col-5 col-xl-5 class="col3">
+				<ion-icon name="ios-arrow-forward" (click)="increaseDay()"></ion-icon>
+			</ion-col>
+			<ion-col class="col4">
+				{{startDate}}-{{endDate}}
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<div class="withscroll">
+		<table class="table table-responsive table-bordered">
+	    <tbody>
+        <tr>
+      		<td class="employee-table">Employee</td>
+          <td *ngFor="let mergeweek of mergeDays" class="employee-col">{{mergeweek.day}}</td>
+        </tr>
+        <tr *ngFor="let employee of employeesArray; let trindex = index">
+        	<td class="employee-table1" (click)="employeeProfile(employee)">{{employee.name}}</td>
+
+        	<td class="employee-col1" *ngIf="!employee.td1==''">{{employee.td1}}</td>
+        	<td class="employee-col2" *ngIf="employee.td1==''">{{employee.td1}}</td>
+
+          <td class="employee-col1" *ngIf="!employee.td2==''">{{employee.td2}}</td>
+          <td class="employee-col2" *ngIf="employee.td2==''">{{employee.td2}}</td>
+
+          <td class="employee-col1" *ngIf="!employee.td3==''">{{employee.td3}}</td>
+          <td class="employee-col2" *ngIf="employee.td3==''">{{employee.td3}}</td>
+
+          <td class="employee-col1" *ngIf="!employee.td4==''">{{employee.td4}}</td>
+          <td class="employee-col2" *ngIf="employee.td4==''">{{employee.td4}}</td>
+
+          <td class="employee-col1" *ngIf="!employee.td5==''">{{employee.td5}}</td>
+          <td class="employee-col2" *ngIf="employee.td5==''">{{employee.td5}}</td>
+
+          <td class="employee-col1" *ngIf="!employee.td6==''">{{employee.td6}}</td>
+          <td class="employee-col2" *ngIf="employee.td6==''">{{employee.td6}}</td>
+
+          <td class="employee-col1" *ngIf="!employee.td7==''">{{employee.td7}}</td>
+          <td class="employee-col2" *ngIf="employee.td7==''">{{employee.td7}}</td>
+        </tr>
+			       
+	    </tbody>
+		</table>
+	</div>
+	<br/>
+	<ion-item class="lastBtns">
+    	<button ion-button round outline class="bothBtn" (click)="createVacationDutyRoster()" item-end>VACATION</button>
+			<button ion-button round outline class="bothBtn" (click)="createWishesDutyRoster()" item-end>WISHES</button>
+  </ion-item>
+
+	<div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

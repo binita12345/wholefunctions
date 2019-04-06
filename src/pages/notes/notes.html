@@ -1,0 +1,70 @@
+<!--
+  Generated template for the NotesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Notes"> </header>
+
+<ion-content class="paddingTop">
+	<ion-toolbar class="toolbar-color">
+    <ion-segment [(ngModel)]="note" (ionChange)="onNotesChanged($event)" class="segment">
+      <ion-segment-button value="current" class="segment-btn">
+        CURRENT
+      </ion-segment-button>
+      <ion-segment-button value="archive" class="segment-btn">
+        ARCHIVE
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+  <img src="assets/imgs/mydepartment/notes.jpg" class="clockC">
+
+  <div *ngIf="ifCurrentSelected">
+  	<ion-item style="margin-top: -15px;">
+  		<button ion-button round class="noteBtn" (click)="newNote()" item-end>NEW NOTE</button>
+		</ion-item>
+		<ion-grid class="noteGrig" *ngIf="NotesArray.length >= 1">
+			<ion-row *ngFor="let note of NotesArray;let idx = index;"  class="noteRow">
+				<ion-col col-10 col-xl-10 col-lg-11 (click)="editCurrentNotes(note)">
+					<ion-label class="dateP">{{note.created_at | date: "dd/MM/yyyy HH:mm"}}</ion-label>
+					<ion-label class="labelC">{{note.notes}}</ion-label>
+				</ion-col>
+				<ion-col col-2 col-xl-2 col-lg-1 class="closeIcon">
+					<ion-icon name="ios-close-circle" item-end (click)="removeNote(note)"></ion-icon>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+		<ion-grid class="noteGrig" *ngIf="NotesArray.length <= 0">
+			<ion-row class="noteRow">
+				<ion-col col-12 col-xl-12 col-lg-12 class="notecol">
+					{{error}}
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+  </div>
+
+  <div *ngIf="ifArchiveSelected">
+  	<ion-grid class="noteGrig" *ngIf="archiveArray.length >= 1">
+			<ion-row *ngFor="let archive of archiveArray;let idx = index;"  class="noteRow">
+				<ion-col col-10 col-xl-10 col-lg-11>
+					<ion-label class="dateP">{{archive.created_at | date: "dd/MM/yyyy HH:mm"}}</ion-label>
+					<ion-label class="labelC">{{archive.notes}}</ion-label>
+				</ion-col>
+				<ion-col col-2 col-xl-2 col-lg-1 class="closeIcon">
+					<ion-icon name="md-refresh-circle" item-end (click)="refreshNote(archive)"></ion-icon>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+		<ion-grid class="noteGrig" *ngIf="archiveArray.length <= 0">
+			<ion-row class="noteRow">
+				<ion-col col-12 col-xl-12 col-lg-12 class="notecol">
+					{{error}}
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+  </div>
+  <div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

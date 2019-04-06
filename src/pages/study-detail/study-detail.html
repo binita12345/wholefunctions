@@ -1,0 +1,34 @@
+<!--
+  Generated template for the StudyDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Learning Platform"> </header>
+
+<ion-content class="paddingTop">
+	<ion-item class="divCss">
+		<ion-icon name="ios-arrow-back" class="iconCss" item-start (click)="gotoBackMenu()"></ion-icon>
+		<p class="pCss">{{getmenu}}</p>
+	</ion-item>
+	<div class="divChk">
+		<ion-item class="checkCss">
+	    <ion-label slot="end">mark as knowledge</ion-label>
+	    <ion-checkbox slot="end" [(ngModel)]="markasknow" class="chkbox"></ion-checkbox>
+	  </ion-item>
+	</div>
+	
+	<ion-item class="lastBtns">
+  	<button ion-button round class="upbtn" (click)="takeTest(getmenu)" item-end>TAKE TEST</button>
+		<button ion-button round class="upbtn" (click)="addToCalendar()" item-end>ADD TO CALENDAR</button>
+  </ion-item>
+  <div class="divPdf">
+  	<h3 class="head">{{getmenu}}</h3>
+	</div>
+	<div class="col document">
+   	<div class="scroll-wrapper">
+      <iframe src="assets/imgs/Lastenheft_IonicApp_Queries.pdf" scrolling="no"></iframe>
+   	</div>
+	</div>
+	<div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

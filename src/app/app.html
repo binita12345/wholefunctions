@@ -1,0 +1,20 @@
+<!-- <ion-nav [root]="rootPage"></ion-nav> -->
+
+
+<ion-menu [content]="content" side="left" persistent="true" type="overlay">
+  
+  <ion-content style="background-color: #040655;">
+    <div class="menuDivDefault" (click)="closeMenuPage()">
+      <img class="menuImgsdefault" src="assets/imgs/menuicon/cancel.png"/>
+    </div>
+    <div class="menuDiv" *ngFor="let p of pages; let idx = index" (click)="openPage(p, idx)" [ngClass]="{'selectedMenu' : (p.title == selectedmenu)}" [class.selected]="idx === currentSelected">
+      <img class="menuImgs" src="{{p.image}}"/>
+      <img class="menuImgs1" src="{{p.otherimage}}"/>
+      <p class="name">{{p.title}}</p>
+    </div>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

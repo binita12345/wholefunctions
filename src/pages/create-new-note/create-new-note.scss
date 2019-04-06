@@ -1,0 +1,61 @@
+page-create-new-note {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.gridCss{
+		background: #f3f3f3;
+    width: 90%;
+    margin: auto;
+    border-radius: 7px;
+    margin-top: 15px;
+    margin-bottom: 55px;
+	}
+	.textArea{
+		background: #fff;
+		color: #000;
+	}
+	.headP{
+		color: #494949;
+    font-size: 20px;
+    padding-left: 10px;
+    font-family: 'Roboto' !important;
+    line-height: 0px;
+    font-weight: 300;
+	}
+	.cancelBtn{
+		height: 30px !important;
+    width: 100px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px !important;
+    background: #E3312C;
+    font-family: 'Roboto' !important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.cancelBtn:hover{
+		background-color: #E3312C !important;
+	}
+	.saveBtn{
+		height: 30px !important;
+    width: 100px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px !important;
+    background: #0614AE;
+    font-family: 'Roboto' !important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.saveBtn:hover{
+		background-color: #0614AE !important;
+	}
+	.lastBtns{
+		background-color: transparent;
+	}
+
+
+	///DEFAULT CSS
+	textarea.text-input {
+    display: block;
+    padding: 10px 10px 50px 10px;
+	}
+}

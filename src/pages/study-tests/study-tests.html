@@ -1,0 +1,185 @@
+<!--
+  Generated template for the StudyTestsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Learning Platform"> </header>
+
+<ion-content class="paddingTop">
+	<ion-item class="divCss">
+		<ion-icon name="ios-arrow-back" class="iconCss" item-start navPop></ion-icon>
+		<p class="pCss">{{getmenu}}</p>
+	</ion-item>
+	<ion-item class="lastBtns">
+  	<button ion-button outline round class="savebtn" (click)="saveTest()" item-end>SAVE TEST</button>
+		<button ion-button round class="cancelBtn" (click)="cancelTest()" item-end>CANCEL TEST</button>
+  </ion-item>
+
+  <div class="divC" *ngIf="isFirstQuestion" id="1">
+  	<h2 class="head3">1/5</h2>
+  	<p class="queP">Sauvignon Blanc is often matured in oak.</p>
+  	<ion-list radio-group [(ngModel)]="firstAns">
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">true</ion-label>
+		    <ion-radio value="first_one" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">false</ion-label>
+		    <ion-radio value="first_two" item-start class="radioC"></ion-radio>
+		  </ion-item>
+	  </ion-list>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <ion-item class="lastBtns">
+			<button ion-button round class="nextBtn" (click)="nextToSecondQuestion()" item-end>NEXT</button>
+	  </ion-item>
+  </div>
+
+  <div class="divC" *ngIf="isSecondQuestion" id="2">
+  	<h2 class="head3">2/5</h2>
+  	<p class="queP">Sauvignon Blanc mostly have __________ acidity.</p>
+  	<ion-list radio-group [(ngModel)]="firstAns">
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">low</ion-label>
+		    <ion-radio value="second_one" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">medium</ion-label>
+		    <ion-radio value="second_two" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">high</ion-label>
+		    <ion-radio value="second_three" item-start class="radioC"></ion-radio>
+		  </ion-item>
+	  </ion-list>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <ion-item class="lastBtns">
+	  	<button ion-button outline round class="savebtn" (click)="previosQuestion1()" item-end>PREVIOUS</button>
+			<button ion-button round class="nextBtn" (click)="nextToThirdQuestion()" item-end>NEXT</button>
+	  </ion-item>
+  </div>
+
+  <div class="divC" *ngIf="isThirdQuestion" id="3">
+  	<h2 class="head3">3/5</h2>
+  	<p class="queP">Which of the following region is typical for Sauvignon Blanc?</p>
+  	<ion-list radio-group [(ngModel)]="firstAns">
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Sancerre</ion-label>
+		    <ion-radio value="third_one" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Pouilly Fuisse</ion-label>
+		    <ion-radio value="third_two" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Mersault</ion-label>
+		    <ion-radio value="third_three" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Chablis</ion-label>
+		    <ion-radio value="third_four" item-start class="radioC"></ion-radio>
+		  </ion-item>
+	  </ion-list>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <ion-item class="lastBtns">
+	  	<button ion-button outline round class="savebtn" (click)="previosQuestion2()" item-end>PREVIOUS</button>
+			<button ion-button round class="nextBtn" (click)="nextToForthQuestion()" item-end>NEXT</button>
+	  </ion-item>
+  </div>
+
+  <div class="divC" *ngIf="isForthQuestion" id="4">
+  	<h2 class="head3">4/5</h2>
+  	<p class="queP">In California Sauvignon Blanc is also called ________ .</p>
+  	<ion-list radio-group [(ngModel)]="firstAns">
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Pinot Bainco</ion-label>
+		    <ion-radio value="forth_one" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Fume Blanc</ion-label>
+		    <ion-radio value="forth_two" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Pinot Blanc</ion-label>
+		    <ion-radio value="forth_three" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Cabernet Sauvignon</ion-label>
+		    <ion-radio value="forth_four" item-start class="radioC"></ion-radio>
+		  </ion-item>
+	  </ion-list>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <ion-item class="lastBtns">
+	  	<button ion-button outline round class="savebtn" (click)="previosQuestion3()" item-end>PREVIOUS</button>
+			<button ion-button round class="nextBtn" (click)="nextToFifthQuestion()" item-end>NEXT</button>
+	  </ion-item>
+  </div>
+
+  <div class="divC" *ngIf="isFifthQuestion" id="5">
+  	<h2 class="head3">5/5</h2>
+  	<p class="queP">Sauvignon Blanc is also grown in Bordeaux.</p>
+  	<ion-list radio-group [(ngModel)]="firstAns">
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Semillon</ion-label>
+		    <ion-radio value="fifth_one" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Chardonny</ion-label>
+		    <ion-radio value="fifth_two" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Pinot noir</ion-label>
+		    <ion-radio value="fifth_three" item-start class="radioC"></ion-radio>
+		  </ion-item>
+
+		  <ion-item class="itemC">
+		    <ion-label item-end class="labelC">Vermentino</ion-label>
+		    <ion-radio value="fifth_four" item-start class="radioC"></ion-radio>
+		  </ion-item>
+	  </ion-list>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <br/>
+	  <ion-item class="lastBtns">
+	  	<button ion-button outline round class="savebtn" (click)="previosQuestion4()" item-end>PREVIOUS</button>
+			<button ion-button round class="nextBtn" (click)="nextToDownloadCertificate()" item-end>NEXT</button>
+	  </ion-item>
+  </div>
+  
+	<div style="margin-top: 45px;height: 20px;"></div>
+
+</ion-content>

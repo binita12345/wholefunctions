@@ -1,0 +1,110 @@
+page-study-detail {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.toolbar-color{
+		background: #01083C !important;
+    padding: 0px;
+	}
+	.iconCss{
+		font-size: 24px;
+    color: #fff;
+	}
+	.divCss{
+		background-color: #01083c;
+	}
+	.item-md{
+		margin-top: 10px !important;
+	}
+	.pCss{
+		color: #fff;
+		font-family: 'Roboto' !important;
+		font-size: 16px;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+	.upbtn{
+		height: 30px !important;
+    width: 120px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px !important;
+    background: #0614AE;
+    font-family: 'Roboto' !important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.3), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+	}
+	.upbtn:hover{
+		background-color: #0614AE !important;
+	}
+	.checkCss{
+		background: transparent;
+		color: #999;
+	}
+	.chkbox {
+    margin: 8px 4px 8px 2px !important;
+	}
+	.divChk{
+		float: right;
+	}
+ 	.head {
+        font-weight: 300;
+    width: 98%;
+    margin: auto;
+    color: #4B4C4C;
+    }
+    .divPdf {
+    	width: 90%;
+    	margin: auto;
+    }
+    #iframe-wrapper{height: 100%; min-height: 100%;}
+	.scroll{height: 100%;}
+	.scroll-wrapper{  
+	     width: 100%;
+	    height: 500px;
+	  -webkit-overflow-scrolling: touch;
+	  overflow: scroll;
+	}
+	.scroll-wrapper iframe{  
+	        width: 100%;
+	    height: 500px;
+	}
+
+
+	///// Default css
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block,
+	.list-md > .item-block:last-child, .list-md > .item-wrapper:last-child .item-block,
+	.list-wp > .item-block:last-child, .list-wp > .item-wrapper:last-child .item-block {
+    border-bottom: none;
+	}
+	.checkbox-ios .checkbox-icon, .checkbox-md .checkbox-icon, .checkbox-wp .checkbox-icon {
+    position: relative;
+    width: 21px;
+    height: 21px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #000;
+    background-color: #fff;
+    border-radius: 0;
+	}
+	.checkbox-ios .checkbox-checked, .checkbox-md .checkbox-checked, .checkbox-wp .checkbox-checked {
+    border-color: #000;
+    background-color: #040D70;
+	}
+	.checkbox-ios .checkbox-checked .checkbox-inner, .checkbox-md .checkbox-checked .checkbox-inner, .checkbox-wp .checkbox-checked .checkbox-inner {
+    left: 6px;
+    top: 1px;
+    position: absolute;
+    width: 4px;
+    height: 9px;
+    border-width: 2px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+	}
+	.item-checkbox-checked {
+		color: #000 !important;
+	}
+}

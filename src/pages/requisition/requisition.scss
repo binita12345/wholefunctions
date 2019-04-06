@@ -1,0 +1,344 @@
+page-requisition {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.segment{
+		background: #01083C !important;
+    padding: 11px;
+    padding-top: 22px;
+	}
+	.toolbar-color{
+		background: #01083C !important;
+    padding: 0px;
+	}
+	.divC{
+		display: inline-flex;
+    float: right;
+    padding: 5px;
+    margin-bottom: -15px;
+	}
+	.iconC{
+		font-size: 30px;
+    margin-right: 10px;
+    color: #484848;
+	}
+	.nameC{
+    margin-top: 5px;
+    font-size: 18px;
+    color: #989AA5;
+    font-family: 'Roboto' !important;
+	}
+	.divMain{
+		width: 96%;
+    margin: auto;
+	}
+	.selLabel{
+		color: #B4B4B4;
+    font-family: 'Roboto' !important;
+    margin: auto;
+    font-size: 15px;
+    width: 94%;
+	}
+	.checkCss{
+    display: -webkit-inline-box;
+    padding: 0px;
+	}
+	.checkLabel{
+      margin: 9px -10px 11px 0 !important;
+	}
+	.chkbox{
+    position: static;
+    display: block;
+    margin: 8px 4px 8px 2px !important;
+	}
+	.chkItem{
+    padding-left: 0px;
+    font-size: 14px;
+    white-space: pre-line;
+    color: #999;
+	}
+  .imageBtn{
+    height: 30px;
+    border-color: #C3C5C6;
+    color: #9c9c9c;
+    font-weight: 600;
+    background-color: #F3F3F3;
+    width: 120px;
+    font-size: 12px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+  }
+  .imageBtn:hover{
+    background-color: #F3F3F3 !important;
+    color: #9c9c9c;
+  }
+  .toggleImg{
+    height: 30px;
+      border-radius: 100px;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  }
+  .colToggle{
+        display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .shopImg{
+    height: 32px;
+    width: 28px;
+    margin: 8px 1px 8px 10px !important;
+  }
+  .itemP{
+    font-size: 14px;
+  }
+  .listRow{
+    background: #f3f3f3;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  .listCol{
+    padding: 0px;
+  }
+  .listImg{
+        min-height: 100%;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+  .listId{
+        font-family: 'Roboto' !important;
+  }
+  .listcol5{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: flex;
+    align-items: center;
+  }
+  .listIcon1{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 20px;
+    color: #0614AE;
+  }
+  .listIcon2{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+    color: #0614AE;
+  }
+  .listCount{
+    background: #fff;
+    padding: 5px 0px 5px 0px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Roboto' !important;
+    width: -webkit-fill-available;
+  }
+  .listCol2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .idB{
+        margin-top: 10px;
+  }
+  .outOrder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+  }
+  .outP{
+    text-align: center;
+    color: #e74235;
+    margin-top: -15px;
+  }
+  .notOut{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .item2{
+    padding-left: 0px;
+  }
+  .nopost {
+    text-align: center;
+    margin-top: 20px;
+    color: #01083C !important;
+  }
+
+
+
+
+	///default csss
+	.toolbar-title-ios, .toolbar-title-md, .toolbar-title-wp {
+    font-size: 16px;
+    color: white !important;
+	}
+	.segment-ios .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+	}
+	.segment-wp .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+	}
+	.segment-md .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+    margin-bottom: -11px;
+    text-transform: none;
+	}
+	.segment-ios .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    border-color: transparent;
+	}
+	.segment-md .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    margin-bottom: -11px;
+    border-color: transparent;
+	}
+	.segment-wp .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    border-color: transparent;
+	}
+  .segment-md .segment-button ion-icon {
+    font-size: 16px;
+    line-height: 3rem;
+  }
+  .searchbar-md .searchbar-input, .searchbar-ios .searchbar-input, .searchbar-wp .searchbar-input, {
+    padding: 2px 15px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #141414;
+    background-color: #fff;
+    -webkit-box-shadow: none !important;
+	}
+	.searchbar-md .searchbar-clear-icon, .searchbar-ios .searchbar-clear-icon, .searchbar-wp .searchbar-clear-icon {
+    left: 13px !important;
+    top: 0;
+    padding: 0;
+    background-position: center;
+    position: absolute;
+    width: 22px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 22px;
+	}
+	.searchbar-md .searchbar-search-icon, .searchbar-ios .searchbar-search-icon, .searchbar-wp .searchbar-search-icon {
+    right: 16px !important;
+    top: 9px;
+    width: 21px;
+    height: 21px;
+    left: auto;
+	}
+	.searchbar-ios {
+    padding: 0 8px;
+    min-height: 44px;
+    border-top: 0.55px solid transparent;
+    border-bottom: none;
+    background: transparent;
+	}
+	.checkbox-ios .checkbox-icon, .checkbox-md .checkbox-icon, .checkbox-wp .checkbox-icon {
+    position: relative;
+    width: 21px;
+    height: 21px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #000;
+    background-color: #fff;
+    border-radius: 0;
+	}
+	.checkbox-ios .checkbox-checked, .checkbox-md .checkbox-checked, .checkbox-wp .checkbox-checked {
+    border-color: #0000A6;
+    background-color: #fff;
+	}
+	.checkbox-ios .checkbox-checked .checkbox-inner, .checkbox-md .checkbox-checked .checkbox-inner, .checkbox-wp .checkbox-checked .checkbox-inner {
+    left: 5px;
+    top: 0px;
+    position: absolute;
+    width: 6px;
+    height: 10px;
+    border-width: 2px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: #0000A6;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+	}
+  .item-checkbox-checked {
+    color: #000 !important;
+  }
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block,
+	.list-md > .item-block:last-child, .list-md > .item-wrapper:last-child .item-block,
+	.list-wp > .item-block:last-child, .list-wp > .item-wrapper:last-child .item-block {
+    border-bottom: none;
+	}
+	.searchbar-ios.searchbar-left-aligned .searchbar-input,
+	.searchbar-md.searchbar-left-aligned .searchbar-input,
+	.searchbar-wp.searchbar-left-aligned .searchbar-input {
+    padding-left: 40px;
+	}
+	.item-ios [item-right], .item-ios [item-end],
+	.item-md [item-right], .item-md [item-end],
+	.item-wp [item-right], .item-wp [item-end] {
+    margin: 0px;
+	}
+  .item-ios.item-block .item-inner, .item-md.item-block .item-inner, .item-wp.item-block .item-inner {
+    padding-right: 0px;
+  }
+}

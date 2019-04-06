@@ -1,0 +1,48 @@
+<!--
+  Generated template for the MaintenancePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Maintenance"> </header>
+
+
+<ion-content class="paddingTop">
+	<div class="divCss"></div>
+	<ion-searchbar placeholder="Search" [(ngModel)]="searchLost" (ionInput)="filterItems($event)" class="searchBar"></ion-searchbar>
+	<button ion-button round class="entryBtn" (click)="addEntry()">ADD ENTRY</button>
+	<br/>
+	<br/>
+	<br/>
+	<div class="withscroll">
+		<table class="table table-responsive table-bordered">
+	    <tbody>
+        <tr>
+      		<td class="headerM">Item</td>
+      		<td class="headerL">Description</td>
+      		<td class="headerL">Location</td>
+      		<td class="headerH">Priority</td>
+      		<td class="headerH">Picture</td>
+      		<td class="headerH">Date</td>
+      		<td class="headerH">Status</td>
+        </tr>
+        
+        <tr *ngFor="let maintain of maintainanceLists; let trindex = index">
+        	<td class="headerMCell">{{maintain.item_name}}</td>
+          <td class="headerLCell">{{maintain.description}}</td>
+          <td class="headerLCell">{{maintain.location}}</td>
+          <td class="headerHCell">{{maintain.priority}}</td>
+          <td class="headerHCell" *ngIf="maintain.image == ''">n/a</td>
+          <td class="headerHCell" *ngIf="maintain.image !== ''" (click)="openNseeImage(maintain.image)">see</td>
+          <td class="headerHCell">{{maintain.date | date: "dd/MM/yyyy"}}</td>
+          <td class="headerHCell">{{maintain.status}}</td>
+        </tr>
+	    </tbody>
+		</table>
+
+	</div>
+  <br/>
+  <div class="norecord" *ngIf="noRecord">
+      {{error}}
+    </div>
+</ion-content>

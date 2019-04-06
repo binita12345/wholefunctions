@@ -1,0 +1,61 @@
+page-my-department {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.divCss{
+		height: 40px;
+		background-color: #02073C;
+	}
+	.thumbnailImg{
+		margin: 0px !important;
+	}
+	.dprtImg{
+		height: 80px !important;
+		width: 100px !important;
+	}
+	.itemBG{
+		background-color: #F2F2F2;
+    border-radius: 6px;
+    padding: 0px;
+    text-align: center;
+    width: 94%;
+    margin: auto;
+	}
+	.para{
+    font-size: 22px;
+    color: #5C5FA5;
+    font-family: "Roboto" !important;
+    font-weight: 300;
+	}
+	.head {
+		font-weight: 300;
+    width: 94%;
+    margin: auto;
+	}
+	.dprtImgall{
+		width: 65px !important;
+		height: 80px !important;
+	}
+	.itemBGall{
+		background-color: #F2F2F2;
+    border-radius: 6px;
+    padding: 0px;
+    text-align: center;
+	}
+	.paraall{
+		font-size: 13px;
+    white-space: pre-wrap;
+    color: #979797;
+    text-align: center;
+    font-family: "Roboto" !important;
+	}
+	p {
+		font-family: "Roboto" !important;
+	}
+
+
+	//default css
+	.label-ios, .label-md, .label-wp {
+    margin: 0;
+	}
+}

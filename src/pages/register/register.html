@@ -1,0 +1,74 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content class="bgCss">
+
+	<div>
+    <ion-icon name="md-arrow-back" class="backArrow" navPop></ion-icon>
+		<img src="assets/imgs/Hoscom_animation.gif" class="animationImg">
+		<img src="assets/imgs/logo.png" class="logoHotel">
+	</div>
+
+	<div class="error-message">
+    {{error}}
+  </div>
+  <br/>
+  <form [formGroup]="signUpFrom" (submit)="signupUser()" class="formCss">
+  	<ion-item class="itemCss">
+      <ion-input type="text" placeholder="First Name" class="inputText" formControlName="firstname"></ion-input>
+    </ion-item>
+    <div class="error-message" 
+      *ngIf="!signUpFrom.controls.firstname.valid  && signUpFrom.controls.firstname.dirty">
+      <p class="parag">Plaese enter first name.</p>
+    </div>
+
+    <ion-item class="itemCss">
+      <ion-input type="text" placeholder="Last Name" class="inputText" formControlName="lastname"></ion-input>
+    </ion-item>
+
+    <ion-item class="itemCss">
+      <ion-datetime class="dateInput inputText" displayFormat="DD.MM.YYYY" [(ngModel)]="myDate" placeholder="Date of Birth" formControlName="dateofbirth"></ion-datetime>
+    </ion-item>
+
+    <ion-item class="itemCss">
+      <ion-input type="text" placeholder="Current Position" class="inputText" formControlName="position"></ion-input>
+    </ion-item>
+    <br/>
+    <ion-grid class="picGrid">
+      <ion-row>
+        <ion-col class="camCss">
+          <img src="{{base64Image}}" class="camimg" (click)="choosePhoto()">
+          <p class="campara">Profile Picture</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item class="itemCss">
+      <ion-input type="email" placeholder="Email" class="inputText" formControlName="email" [class.invalid]="!signUpFrom.controls.email.valid && signUpFrom.controls.email.dirty"></ion-input>
+    </ion-item>
+    <div class="error-message" 
+      *ngIf="!signUpFrom.controls.email.valid  && signUpFrom.controls.email.dirty">
+      <p>Please enter a valid email.</p>
+    </div>
+
+    <ion-item class="itemCss">
+      <ion-input type="password" placeholder="Password" class="inputText" formControlName="password" [class.invalid]="!signUpFrom.controls.password.valid && signUpFrom.controls.password.dirty"></ion-input>
+    </ion-item>
+    <div class="error-message" 
+      *ngIf="!signUpFrom.controls.password.valid  && signUpFrom.controls.password.dirty">
+      <p class="parag">Your password needs more than 6 characters.</p>
+    </div>
+
+    <br/>
+
+  	<button ion-button round full class="signupBtn" type="submit">REGISTER</button>
+  </form>
+  <p class="loginP" (click)="backToLogin()">Already have an account ? Login Here</p>
+
+</ion-content>

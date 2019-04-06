@@ -1,0 +1,43 @@
+<!--
+  Generated template for the PreviousOrderPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<header title="My Department"> </header>
+
+<ion-content class="paddingTop">
+	<div class="divCss"></div>
+	<div class="closeDiv">
+		<button ion-button round outline class="imageBtn" (click)="closePreviousOrder()" item-end>CLOSE</button>
+		<div class="divC" navPop>
+	  	<ion-icon name="ios-arrow-back" class="iconC"></ion-icon>
+	  	<p class="nameC">Requisition</p>
+	  </div>
+	</div>
+	<div class="gridCss">
+		<p class="nameP">PREVIOUS ORDERS</p>
+		<div class="withscroll">
+			<table class="table table-responsive table-bordered" *ngFor="let order of previousOrders" style="margin-top: 15px;">
+		    <tbody>
+		    	<tr>
+		    		<td class="date-th">{{order.created_at | date: "dd/MM/yyyy"}}</td>
+		    		<td class="quantity-th">Quantity</td>
+		    		<td class="item-th">Item</td>
+		    		<td class="items-th">Item #</td>
+		    	</tr>
+	      	<tr>
+	      		<td class="date-td">Order {{order.order_no}}</td>
+		    		<td class="quantity-td">{{order.quantity}}x</td>
+		    		<td class="item-td">{{order.product_name}}</td>
+		    		<td class="items-td">{{order.product_id}}</td>
+	      	</tr>
+		    </tbody>
+			</table>
+		</div>
+		<div class="norecord" *ngIf="noRecord">
+      {{error}}
+    </div>
+	</div>
+</ion-content>

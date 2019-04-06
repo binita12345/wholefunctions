@@ -1,0 +1,213 @@
+page-breakage {
+	.back-button.show-back-button {
+    display: none;
+	}
+	.segment{
+		background: #01083C !important;
+    padding: 11px;
+    padding-top: 22px;
+	}
+	.toolbar-color{
+		background: #01083C !important;
+    padding: 0px;
+	}
+	.divC{
+		display: inline-flex;
+    float: right;
+    padding: 5px;
+    margin: 0px 15px -20px;
+	}
+	.iconC{
+		font-size: 30px;
+    margin-right: 10px;
+    color: #484848;
+	}
+	.nameP{
+    margin-top: 5px;
+    font-size: 18px;
+    color: #989AA5;
+    font-family: 'Roboto' !important;
+	}
+	.breakBtn{
+		height: 30px !important;
+    color: #fff;
+    font-weight: 600;
+    background: #0614AE;
+    font-size: 14px;
+    font-family: 'Roboto' !important;
+    width: 140px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+	}
+	.breakBtn:hover{
+		background-color: #0614AE !important;
+	}
+	.dateP{
+		color: #9FA2A5;
+    font-weight: 500;
+	}
+	.nullDiv {
+    width: 94%;
+    margin: auto;
+    text-align: center;
+    background: #F3F3F3;
+    border-radius: 7px;
+    padding: 15px;
+	}
+  .editBtn{
+    width: 50px;
+    height: 22px;
+    position: static;
+    border-color: #C3C5C6;
+    color: #9c9c9c;
+    font-weight: 600;
+    font-size: 12px;
+    margin: 0 !important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+  }
+  .editBtn:hover{
+    background-color: #C3C5C6 !important;
+  }
+  .listGrid{
+    padding: 0px;
+    border-radius: 7px;
+    width: 96%;
+    margin: auto;
+  }
+  .dateC{
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .nameC{
+        margin-top: -5px;
+    font-size: 15px;
+    color: #000;
+  }
+  .reasonP{
+    margin-top: -5px;
+    font-size: 15px;
+  }
+  .colBtn{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .closeIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E63426;
+    font-size: 20px;
+  }
+  .listCol{
+    padding: 0px;
+  }
+  .listImg {
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+  }
+  .listRow{
+    border-radius: 7px;
+    background-color: #f3f3f3;
+    margin-top: 10px !important;
+    max-height: fit-content;
+    height: fit-content;
+  }
+  .listcol5{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    align-items: center;
+  }
+  .nopost {
+    text-align: center;
+    margin-top: 20px;
+    color: #01083C !important;
+  }
+
+
+	.toolbar-title-ios, .toolbar-title-md, .toolbar-title-wp {
+    font-size: 16px;
+    color: white !important;
+	}
+	.segment-ios .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+	}
+	.segment-wp .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+	}
+	.segment-md .segment-button {
+    flex: 1;
+    width: 0;
+    height: 3.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 500;
+    margin-bottom: -11px;
+    text-transform: none;
+	}
+	.segment-ios .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    border-color: transparent;
+	}
+	.segment-md .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    margin-bottom: -11px;
+    border-color: transparent;
+	}
+	.segment-wp .segment-button.segment-activated {
+    color: #01083C;
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 500;
+    opacity: 1;
+    border-color: transparent;
+	}
+  .segment-md .segment-button ion-icon {
+    font-size: 16px;
+    line-height: 3rem;
+  }
+}

@@ -1,0 +1,108 @@
+<!--
+  Generated template for the GuestPreferencesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="My Department"> </header>
+
+<ion-content class="paddingTop">
+	<ion-item class="divCss">
+		<ion-icon name="ios-arrow-back" class="iconCss" item-start navPop></ion-icon>
+		<p class="pCss">Guest Preferences</p>
+	</ion-item>
+	<br/>
+	<ion-searchbar placeholder="Search for Guest or Room No." [(ngModel)]="searchTerm" (ionInput)="filterItems($event)" class="searchBar"></ion-searchbar>
+	<div style="margin-bottom: 55px;">
+		<ion-grid class="gridCss" *ngFor="let preference of preferencesLists;let idx = index;">
+			<ion-row>
+				<ion-col col-1 col-xl-1 col-lg-1 class="col1">
+					<span class="spanP">{{preference.prefId}}</span>
+				</ion-col>
+
+				<ion-col col-11 col-xl-11 col-lg-11 *ngIf="!addpreference">
+					<h5>{{preference.prefName}}</h5>
+					<ion-item class="itemC">
+					  <ion-icon [name]="visible ? 'ios-arrow-down' :'ios-arrow-forward'" (click)="toggle(idx)" item-start class="iconC"></ion-icon>
+						<p class="prefP">F & B</p>
+						<div *ngIf="showPreferences">
+							<P class="descP" *ngFor="let fNb of preference.fNb;let ix = index;">- {{fNb.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b class="descB" (click)="verifyPreference(fNb)" *ngIf="countClick < 3">VERIEFY</b><b class="checkB" *ngIf="countClick == 3">1x <ion-icon name="md-checkmark" class="checkC"></ion-icon></b>
+							</P>
+						</div>
+					</ion-item>
+					<ion-item class="itemC">
+					  <ion-icon [name]="visible ? 'ios-arrow-down' :'ios-arrow-forward'" (click)="toggle(idx)" item-start class="iconC"></ion-icon>
+						<p class="prefP">FO</p>
+					</ion-item>
+					<ion-item class="itemC">
+					  <ion-icon [name]="visible ? 'ios-arrow-down' :'ios-arrow-forward'" (click)="toggle(idx)" item-start class="iconC"></ion-icon>
+						<p class="prefP">HSK</p>
+					</ion-item>
+					<ion-item class="itemC">
+					  <ion-icon [name]="visible ? 'ios-arrow-down' :'ios-arrow-forward'" (click)="toggle(idx)" item-start class="iconC"></ion-icon>
+						<p class="prefP">Concierge</p>
+					</ion-item>
+					<ion-item class="itemC">
+					  <ion-icon [name]="visible ? 'ios-arrow-down' :'ios-arrow-forward'" (click)="toggle(idx)" item-start class="iconC"></ion-icon>
+						<p class="prefP">SPA</p>
+					</ion-item>
+
+					<div class="buttonDiv">
+						<button ion-button round outline class="imageBtn" (click)="addPreferences()">ADD PREFERENCE</button>
+					</div>
+
+					<ion-row class="radioRow">
+						<ion-col col-6 col-xl-3 col-lg-3 class="radioCss">
+							<p class="nameCss">Nights in Hotel<br>
+								<b class="boldName">{{preference.nighthotel}}</b>
+							</p>
+						</ion-col>
+						<ion-col col-6 col-xl-3 col-lg-3 class="radioCss">
+							<p class="nameCss">Nights in Brand<br>
+								<b class="boldName">{{preference.nightbrand}}</b>
+							</p>
+						</ion-col>
+						<ion-col col-6 col-xl-3 col-lg-3 class="radioCss"> 
+							<br/>
+							<p class="nameCss">Arrival<br>
+								<b class="boldName">{{preference.arrival}}</b>
+							</p>
+						</ion-col>
+						<ion-col col-6 col-xl-3 col-lg-3 class="radioCss">
+							<p class="nameCss">Departure<br>
+								<b class="boldName">{{preference.departure}}</b>
+							</p>
+						</ion-col>
+					</ion-row>
+					<h6 class="otherH">OTHER INFO</h6>
+					<p class="descP">- {{preference.otherinfo}}</p>
+					<br/>
+					<h6 class="compH">COMPLAINTS</h6>
+					<p class="compP" *ngFor="let complaint of preference.complaints">- {{complaint.name}}</p>
+				</ion-col>
+
+				<ion-col col-11 col-xl-11 col-lg-11 *ngIf="addpreference">
+					<h5 class="addH">New Preference</h5>
+
+					<ion-item class="slectItem">
+				    <ion-select name="prefrns" [(ngModel)]="prefrns" (ionChange)="onPreferencesChange(prefrns)" placeholder="Area" text-wrap class="selectItem1">
+	            <ion-option value="fnb">F&B</ion-option>
+	            <ion-option value="hsk">HSK</ion-option>
+	            <ion-option value="concierge">Concierge</ion-option>
+	            <ion-option value="fo">FO</ion-option>
+	            <ion-option value="spa">SPA</ion-option>
+          	</ion-select>
+				</ion-item>
+				<ion-textarea placeholder="Preference" class="textArea" [(ngModel)]="preferenceTexts"></ion-textarea>
+				<div class="error-message">
+			    {{error}}
+			  </div>
+				<ion-item class="lastBtns">
+		    	<button ion-button round class="cancelBtn" (click)="cancelNewPreference()" item-end>CANCEL</button>
+					<button ion-button round class="postBtn" (click)="addNewPreference()" item-end>ADD</button>
+			  </ion-item>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+</ion-content>

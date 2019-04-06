@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Volumes/mac_data/Document_data/Binita/hoscom/HosComApp/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-el/values-el.xml",
+            "map": [
+                {
+                    "source": "/Users/mac-pc9/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.4.0.aar/9dc05d1a500b846fecebf51ac0abdd39/res/values-el/values-el.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,173,281,404,515,632,717,822,948,1036,1122,1207,1318,1428,1530,1641,1750,1858,1981,2081,2166",
+                        "endColumns": "117,107,122,110,116,84,104,125,87,85,84,110,109,101,110,108,107,122,99,84,100",
+                        "endOffsets": "168,276,399,510,627,712,817,943,1031,1117,1202,1313,1423,1525,1636,1745,1853,1976,2076,2161,2262"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,30,32",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,173,281,404,515,632,717,822,948,1036,1122,1207,1318,1428,1530,1641,1750,1858,1981,2726,2894",
+                        "endColumns": "117,107,122,110,116,84,104,125,87,85,84,110,109,101,110,108,107,122,99,84,100",
+                        "endOffsets": "168,276,399,510,627,712,817,943,1031,1117,1202,1313,1423,1525,1636,1745,1853,1976,2076,2806,2990"
+                    }
+                },
+                {
+                    "source": "/Volumes/mac_data/Document_data/Binita/hoscom/HosComApp/platforms/android/app/src/main/res/values-el/fpauth-strings.xml",
+                    "from": {
+                        "startLines": "4,2,6,7,8,5,9,3,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "175,55,300,377,438,254,518,110,582,700",
+                        "endColumns": "78,54,76,60,79,45,63,64,117,82",
+                        "endOffsets": "249,105,372,433,513,295,577,170,695,778"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27,28,29,31",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2081,2160,2215,2292,2353,2433,2479,2543,2608,2811",
+                        "endColumns": "78,54,76,60,79,45,63,64,117,82",
+                        "endOffsets": "2155,2210,2287,2348,2428,2474,2538,2603,2721,2889"
+                    }
+                }
+            ]
+        }
+    ]
+}

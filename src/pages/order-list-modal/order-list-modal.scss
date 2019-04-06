@@ -1,0 +1,87 @@
+page-order-list-modal {
+	.nameP{
+		background: #0000A6;
+    padding: 12px;
+    margin-top: 0px;
+    color: #fff;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 16px;
+	}
+	.orderBtn{
+ 		background: #010656;
+    height: 30px;
+    float: right;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+ 	}
+ 	.orderBtn:hover{
+		background-color: #010656 !important;
+	}
+	.closeIcon{
+		color: #E63426;
+    font-size: 32px;
+    margin: -6px !important;
+	}
+	.orderB{
+		font-weight: 500;
+    color: #000;
+	}
+	.orderP{
+		color: #676868;
+	}
+	.orderDiv{
+		margin-top: -16px;
+	}
+
+	ion-content {
+    &.content {
+      div.scroll-content {
+        top: 200px;
+		    height: 50%;
+		    width: 80%;
+        border-radius: 10px;
+        margin: auto;
+        background-color: #F3F3F3;
+      }
+    }
+
+    &.content-ios {
+      background-color: rgba(0, 0, 0, 0.3);
+      div.scroll-content {
+        background-color: #F5F5F5;
+		    border-radius: 10px;
+        overflow:auto;
+      }
+    }
+
+    &.content-md {
+      background-color: rgba(0, 0, 0, 0.3);
+	      div.scroll-content {
+        background-color: #F5F5F5;
+		    border-radius: 10px;
+        overflow:auto;
+      }
+    }
+	}
+	.item1{
+    background: transparent;
+    color: #000;
+    font-size: 14px;
+    width: 90%;
+    margin: auto;
+    padding: 0px;
+    border-bottom: 0.55px solid #c8c7cc;
+	}
+	.closeC{
+		position: absolute;
+    top: 4px;
+    right: 12px;
+    font-size: 36px;
+    font-weight: 600;
+    color: #fff;
+	}
+}

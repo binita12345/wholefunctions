@@ -1,0 +1,35 @@
+<!--
+  Generated template for the CreateNewNotePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Notes"> </header>
+
+<ion-content class="paddingTop">
+	<ion-grid class="gridCss">
+		<p class="headP">Create New Notes</p>
+		
+		<ion-row>
+			<!-- <ion-col col-12>
+				<ion-item class="itemC">
+			    <ion-datetime class="dateInput" displayFormat="DD/MM/YY" [(ngModel)]="dob" placeholder="DD/MM/YY"></ion-datetime>
+  				<ion-icon name="md-calendar" item-end class="iconP"></ion-icon>
+				</ion-item>
+			</ion-col> -->
+			<!-- <ion-col col-12> -->
+				<ion-textarea placeholder="Your Message" class="textArea" [(ngModel)]="noteMessage" value="{{noteMessage}}"></ion-textarea>
+			<!-- </ion-col> -->
+		</ion-row>
+		<div class="error-message">
+	    {{error}}
+	  </div>
+		<ion-item class="lastBtns">
+	    	<button ion-button round class="cancelBtn" (click)="cancelNewNote()" item-end>CANCEL</button>
+			<button ion-button round class="saveBtn" (click)="saveNewNote()" item-end>SAVE</button>
+	  </ion-item>
+	  
+	</ion-grid>
+	<div style="margin-top: 45px;height: 20px;"></div>
+
+</ion-content>

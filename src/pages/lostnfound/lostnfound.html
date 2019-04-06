@@ -1,0 +1,110 @@
+<!--
+  Generated template for the archivePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Lost & Found"> </header>
+
+<ion-content class="paddingTop">
+	<ion-toolbar class="toolbar-color">
+    <ion-segment [(ngModel)]="lostnfound" (ionChange)="onLostNFoundChanged($event)" class="segment">
+      <ion-segment-button value="current" class="segment-btn">
+        CURRENT
+      </ion-segment-button>
+      <ion-segment-button value="archive" class="segment-btn">
+        ARCHIVE
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <div *ngIf="ifCurrentSelected">
+		<ion-searchbar placeholder="Search" [(ngModel)]="searchLost" (ionInput)="filterItems($event)" class="searchBar"></ion-searchbar>
+		<button ion-button round class="entryBtn" (click)="createentry()">CREATE ENTRY</button>
+
+		<ion-grid class="gridC" *ngIf="lostNfoundArray.length >= 1">
+			<ion-row class="rowC"  *ngFor="let lostnfound of lostnFoundLists;let idx = index;">
+				<ion-col col-4 col-xl-4 col-lg-3 class="imgCol">
+					<img src="{{lostnfound.file_name}}" class="listImg" *ngIf="lostnfound.file_type == 'jpg' || lostnfound.file_type == 'png' || lostnfound.file_type == 'jpeg' || lostnfound.file_type == 'mp4'">
+					
+					<div class="listImgdiv" *ngIf="lostnfound.file_type == 'odt' || lostnfound.file_type == 'pdf' || lostnfound.file_type == 'xlsx' || lostnfound.file_type == 'txt'">
+						<button ion-button round outline class="downloadBtn" (click)="openfilesinbrowser(lostnfound)">Download OR <br/>Open File</button>
+					</div>
+					<img src="assets/imgs/noimage.png" class="listImg" *ngIf="lostnfound.file_type == ''">
+				</ion-col>
+				<ion-col col-8 col-xl-8 col-lg-9>
+					<ion-item class="lastBtns">
+			    	<button ion-button round outline class="returnBtn" (click)="returnLostnFound(lostnfound, idx)" item-end>RETURNED</button>
+						<button ion-button round outline class="editBtn" (click)="editLostnFound(lostnfound)" item-end>EDIT</button>
+				  </ion-item>
+				  <ion-row>
+				  	<ion-col col-12 col-xl-12><h5 class="nameH">{{lostnfound.item_name}}</h5></ion-col>
+				  	<ion-col col-5 col-xl-4 col-lg-3 class="nameP">Description</ion-col>
+				  	<ion-col col-7 col-xl-8 col-lg-9 class="nameB">{{lostnfound.description}}</ion-col>
+				  	<ion-col col-5 col-xl-4 col-lg-3 class="nameP">Name/#</ion-col>
+				  	<ion-col col-7 col-xl-8 col-lg-9 class="nameB">{{lostnfound.name}}</ion-col>
+				  	<ion-col col-5 col-xl-4 col-lg-3 class="nameP">Location</ion-col>
+				  	<ion-col col-7 col-xl-8 col-lg-9 class="nameB">{{lostnfound.location}}</ion-col>
+				  	<ion-col col-5 col-xl-4 col-lg-3 class="nameP">Date</ion-col>
+				  	<ion-col col-7 col-xl-8 col-lg-9 class="nameB">{{lostnfound.date}}</ion-col>
+				  </ion-row>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+		<ion-grid class="gridC" *ngIf="lostNfoundArray.length <= 0">
+			<ion-row class="rowC">
+				<ion-col col-12 col-xl-12 col-lg-12 class="notecol">
+					{{error}}
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+	</div>
+	<div *ngIf="ifArchiveSelected">
+		<ion-grid class="gridC" *ngIf="archiveArray.length >= 1">
+			<ion-row class="rowC"  *ngFor="let archive of archiveArray;let idx = index;">
+				<ion-col col-4 col-xl-4 col-lg-3 class="imgCol">
+					<img src="{{archive.file_name}}" class="listImg" *ngIf="archive.file_type == 'jpg' || archive.file_type == 'png' || archive.file_type == 'jpeg' || archive.file_type == 'mp4'">
+					
+					<div class="listImgdiv" *ngIf="archive.file_type == 'odt' || archive.file_type == 'pdf' || archive.file_type == 'xlsx' || archive.file_type == 'txt' || archive.file_type == 'docx'">
+						<button ion-button round outline class="downloadBtn" (click)="openfilesinbrowser(archive)">Download OR <br/>Open File</button>
+					</div>
+					<img src="assets/imgs/noimage.png" class="listImg" *ngIf="archive.file_type == ''">
+				</ion-col>
+				<ion-col col-8 col-xl-8 col-lg-9>
+					<ion-item class="lastBtns">
+			    	<button ion-button round outline class="returnBtn" (click)="restorearchive(archive, idx)" item-end>RESTORE</button>
+				  </ion-item>
+				  <ion-row>
+				  	<ion-col col-12 col-xl-12><h5 class="nameH">{{archive.item_name}}</h5></ion-col>
+				  	<ion-col col-5 col-xl-4 col-lg-3 class="nameP">Description</ion-col>
+				  	<ion-col col-7 col-xl-8 col-lg-9 class="nameB">{{archive.description}}</ion-col>
+				  	<ion-col col-5 col-xl-4 col-lg-3 class="nameP">Name/#</ion-col>
+				  	<ion-col col-7 col-xl-8 col-lg-9 class="nameB">{{archive.name}}</ion-col>
+				  	<ion-col col-5 col-xl-4 col-lg-3 class="nameP">Location</ion-col>
+				  	<ion-col col-7 col-xl-8 col-lg-9 class="nameB">{{archive.location}}</ion-col>
+				  	<ion-col col-5 col-xl-4 col-lg-3 class="nameP">Date</ion-col>
+				  	<ion-col col-7 col-xl-8 col-lg-9 class="nameB">{{archive.date}}</ion-col>
+				  </ion-row>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+
+		<ion-grid class="gridC" *ngIf="archiveArray.length <= 0">
+			<ion-row class="rowC">
+				<ion-col col-12 col-xl-12 col-lg-12 class="notecol">
+					{{error}}
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+	<ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="scroll == 'currentlosts'">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more current data..." *ngIf="pagingEnabled"></ion-infinite-scroll-content>
+  </ion-infinite-scroll> 
+  <ion-infinite-scroll (ionInfinite)="doInfinite1($event)" *ngIf="scroll == 'archivelosts'">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more archive data..." *ngIf="pagingEnabled1"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <div *ngIf="!pagingEnabled && scroll == 'currentlosts'" class="nopost"> No more current lost is available.</div>
+  <div *ngIf="!pagingEnabled1 && scroll == 'archivelosts'" class="nopost"> No more archive lost is available.</div>
+	<div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

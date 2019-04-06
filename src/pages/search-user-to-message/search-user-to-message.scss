@@ -1,0 +1,77 @@
+page-search-user-to-message {
+	ion-content {
+    &.content {
+      div.scroll-content {
+        top: 15%;
+		    left: 7%;
+		    width: 86%;
+		    height: 80%;
+        overflow:scroll;
+      }
+    }
+
+    &.content-ios {
+      background-color: rgba(0, 0, 0, 0.3);
+
+      div.scroll-content {
+        background-color: #F3F3F3;
+    		border-radius: 7px;
+		    -webkit-box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &.content-md {
+      background-color: rgba(0, 0, 0, 0.3);
+      
+      div.scroll-content {
+        background-color: #F3F3F3;
+    		border-radius: 7px;	
+		    -webkit-box-shadow: 1px 5px 6px rgba(0, 0, 0, 0.3);
+
+      }
+    }
+	}
+
+	.searchBar{
+		border-bottom: none;
+    background: transparent;
+    padding: 0px;
+	}
+	.userImg{
+		height: 50px;
+    width: 100%;
+    max-width: 50px;
+    border-radius: 100px;
+    margin: auto;
+	}
+	.colDesc{
+    display: grid;
+    align-items: center;
+    justify-content: center !important;
+	}
+	.username{
+    color: #9A9DA0;
+    font-family: 'Roboto' !important;
+    font-size: 10px;
+    margin-top: 3px;
+    white-space: nowrap;
+    text-align: center;
+	}
+	.rowCss{
+		border-bottom: 1px solid #c7c8ca;
+		margin-top: 10px !important;
+	}
+	.userlabl{
+		color: #343536;
+		font-family: 'Roboto' !important;
+		font-size: 16px;
+	}
+  .closeIcon{
+    text-align: right;
+    font-size: 24px;
+    margin: 0px 5px -5px 0px;
+  }
+  .rowCss:focus {
+    border: 1px solid blue;
+  }
+}

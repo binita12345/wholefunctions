@@ -1,0 +1,96 @@
+<!--
+  Generated template for the NewsfeedDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Newsfeed"> </header>
+
+<ion-content class="paddingTop">
+
+	<ion-item class="divCss">
+		<ion-icon name="md-arrow-round-back" class="iconCss" item-start navPop></ion-icon>
+		<p class="pCss">{{title}}</p>
+	</ion-item>
+
+	<ion-grid class="gridCss">
+		<ion-row>
+			<ion-col col-12 col-xl-12>
+				<h6 style="margin-top: 0.6rem;">{{designationTitle}}</h6>
+				<p class="upperDetail">{{fullMessage}}</p>
+				<p class="upperDetail" *ngIf="attachments?.length > 0">we attached his portraits</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-12 col-xl-12 *ngFor="let file of filenameArray">
+  			<button class="filesBtn" round outline ion-button (click)="openfilesinbrowser(file)">{{file.File_Name}}</button>
+  		</ion-col>
+  	</ion-row>
+		<ion-row *ngIf="slideImages?.length > 0">
+			<ion-col col-1 col-xl-1 class="colImg">
+				<img src="assets/imgs/newsfeed/back.png" class="imgDetail" (click)="prev()">
+			</ion-col>
+			<ion-col col-10 col-xl-10 class="colImg1">
+				<ion-slides options="slideOpts" class="slideCss" #slides>
+		      <ion-slide *ngFor="let slide of slideImages">
+		        <img src="{{slide.File_Name}}" class="imgPic" *ngIf="slide.File_Extension == 'jpg' || slide.File_Extension == 'png' || slide.File_Extension == 'jpeg'">
+		        <video width="100%" height="100" loop class="embed-responsive-item" controls *ngIf="slide.File_Extension == 'mp4'">
+					    <source [src]="slide.File_Name" type="video/mp4">
+					  </video>
+		      </ion-slide>
+		    </ion-slides>
+			</ion-col>
+			<ion-col col-1 col-xl-1 class="colImg">
+				<img src="assets/imgs/newsfeed/forward.png" class="imgDetail" (click)="next()">
+			</ion-col>
+		</ion-row>	
+
+		<ion-row *ngIf="disableComment == '0'">
+			<ion-col col-6 col-xl-6 class="comCol">
+				Comment
+			</ion-col>
+			<ion-col col-6 col-xl-6 class="comBtn" *ngIf="!ifusercomments">
+				<button ion-button round outline class="commentBtn" (click)="createComment()">COMMENT</button>
+			</ion-col>
+		</ion-row>	
+
+		<div *ngIf="ifusercomments">
+			<div *ngIf="disableComment == '0'">
+				<ion-row>
+					<ion-col col-3 col-xl-3 class="colDesc">
+						<img src="assets/imgs/user.png" class="comProfile">
+						<p class="comusername">{{currentusername}}</p>
+						<p class="comuserdesign">{{currentuserdesign}}</p>
+					</ion-col>
+					<ion-col col-9 col-xl-9>
+						<div class="divCom">
+							<ion-textarea class="textArea" [(ngModel)]="commentdetail"></ion-textarea>
+						</div>
+					</ion-col>
+				</ion-row>	
+				<ion-row>
+					<ion-col col-4 col-xl-4><button ion-button round class="cancelBtn" (click)="cancelComment()">CANCEL</button></ion-col>
+					<ion-col col-4 col-xl-4><button ion-button round outline class="imageBtn" (click)="addImageToComment()">ADD IMAGE/FILE</button></ion-col>
+					<ion-col col-4 col-xl-4><button ion-button round class="postcommentBtn" (click)="postComment()">POST COMMENT</button></ion-col>
+				</ion-row>
+			</div>
+		</div>
+		<div *ngIf="disableComment == '0'">
+			<ion-row *ngFor="let comment of userComments">
+				<ion-col col-3 col-xl-3 class="colDesc">
+					<img src="{{comment.profile_picture}}" class="comProfile" *ngIf="comment.profile_picture !== ''">
+					<img src="assets/imgs/images.png" class="comProfile" *ngIf="comment.profile_picture == ''">
+					<p class="comusername">{{comment.first_name}} {{comment.last_name}}</p>
+					<p class="comuserdesign">{{comment.current_position}}</p>
+				</ion-col>
+				<ion-col col-9 col-xl-9>
+					<div class="divCom">
+						<p class="paraDiv">{{comment.commentdetail}}</p>
+						<p class="date">{{comment.date}} &nbsp;&nbsp;&nbsp;&nbsp; {{comment.time}}</p>
+					</div>
+				</ion-col>
+			</ion-row>	
+		</div>
+	</ion-grid>
+	<div style="margin-bottom: 65px;"></div>
+</ion-content>

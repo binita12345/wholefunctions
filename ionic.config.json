@@ -1,0 +1,7 @@
+{
+  "name": "LastenHeftApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

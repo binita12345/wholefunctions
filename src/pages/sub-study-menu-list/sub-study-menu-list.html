@@ -1,0 +1,32 @@
+<!--
+  Generated template for the SubStudyMenuListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<header title="Learning Platform"> </header>
+
+<ion-content class="paddingTop">
+	<ion-item class="divCss">
+		<ion-icon name="ios-arrow-back" class="iconCss" item-start (click)="gotoBackMenu()"></ion-icon>
+		<p class="pCss">{{getmenu}}</p>
+	</ion-item>
+
+	<ion-searchbar placeholder="Search" [(ngModel)]="searchTerm" (ionInput)="filterItems($event)" class="searchBar"></ion-searchbar>
+	<ion-grid class="gridC">
+		<ion-row class="listRow" *ngFor="let substudy of substudyLists;let idx = index;" (click)="gotoMenuDetails(substudy)">
+			<progress-bar [progress]="substudy.percent" class="progr"></progress-bar>
+			<ion-col col-5 col-xl-5 col-lg-4 class="colImg">
+				<div class="btnDiv">
+					<button ion-button round class="percentBtn" [ngClass]="{'green-btn' : substudy.percent == '100'}">{{substudy.percent}}%</button>
+					<img src="{{substudy.image}}" class="listImg">	
+				</div>
+			</ion-col>
+			<ion-col col-7 col-xl-7 col-lg-8 class="colText">
+				<h3 class="listH">{{substudy.name}}</h3>
+				<p class="listP">{{substudy.points}} points</p>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<div style="margin-top: 45px;height: 20px;"></div>
+</ion-content>

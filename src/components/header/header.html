@@ -1,0 +1,26 @@
+<!-- Generated template for the HeaderComponent component -->
+<ion-header>
+  <ion-navbar>   
+  	
+    <ion-grid>
+      <ion-row>
+        <ion-col col-1 col-xl-1 class="colTime">
+        	<img src="assets/imgs/menuicon/menu.png" class="menuImg" menuToggle>
+        </ion-col>
+        <ion-col col-7 col-xl-7 class="colTime">
+        	<ion-title class="titleCss">{{title}}</ion-title>
+        </ion-col>
+        <ion-col col-2 col-xl-2 class="colTime">
+        	<ion-label class="labelCss">{{timeH}} h</ion-label>
+        </ion-col>
+        <ion-col col-1 col-xl-1 class="colTime">
+        	<img src="assets/imgs/pie.png" class="menuImg" class="pieImg">
+        </ion-col>
+        <ion-col col-1 col-xl-1 class="profilCol">
+        	<img src="assets/imgs/user.png" class="profileImg" (click)="openProfileModal()" *ngIf="profilePic == ''">
+          <img src="{{profilePic}}" class="profileImg" (click)="openProfileModal()" *ngIf="profilePic !== ''">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header> 

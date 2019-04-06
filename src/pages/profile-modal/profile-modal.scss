@@ -1,0 +1,87 @@
+page-profile-modal {
+	ion-content {
+    &.content {
+      div.scroll-content {
+        overflow:hidden;
+        border-radius: 10px;
+      }
+    }
+
+    &.content-ios {
+      background-color: rgba(0, 0, 0, 0.3);
+      height: 177px;
+    	width: 177px;
+    	border-radius: 10px;
+	    right: 0;
+	    top: 45px;
+      position: fixed;
+	    left: calc(100% - (200px)) !important;
+	    float: right;
+	     margin: auto;
+
+      div.scroll-content {
+        background-color: #F5F5F5;
+      }
+    }
+
+    &.content-md {
+      background-color: rgba(0, 0, 0, 0.3);
+      height: 177px;
+    	width: 177px;
+    	border-radius: 10px;
+	    right: 0;
+	    top: 45px;
+      position: fixed;
+	    left: calc(100% - (200px)) !important;
+	    float: right;
+	     margin: auto;
+	      div.scroll-content {
+        background-color: #F5F5F5;
+      }
+    }
+	}
+	.imgDetail{
+		height: 87px;
+    width: 100%;
+	}
+	.divAbove{
+		padding-left: 5px;
+    margin-top: -60px;
+    color: #fff;
+	}
+	.modalP{
+		    margin-top: -10px;
+	}
+	.item1{
+		background: transparent;
+    margin-top: -8px;
+    color: #626263;
+    font-size: 14px;
+	}
+	.item2{
+		background: transparent;
+    border-top: 1px solid #C7C8CA;
+    margin-top: -5px;
+    color: #626263;
+    font-size: 14px;
+	}
+
+	ion-modal.profile-modal ion-backdrop {
+    visibility: visible !important;
+    z-index:0;
+	}
+	ion-modal.profile-modal .modal-wrapper{
+	    top: 45px;
+	    height: 177px;
+    	width: 177px;
+	    position:absolute;
+	}
+	.closeC{
+		position: absolute;
+    top: 4px;
+    right: 10px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 600;
+	}
+}

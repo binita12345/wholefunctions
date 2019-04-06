@@ -1,0 +1,212 @@
+page-calendar {
+	.employee-col{
+    background: #0614AE;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Roboto' !important;
+    width: 100px;
+    display: inline-block;
+    height: 40px;
+		padding-top: 10px;
+	}
+	.calendar-body{
+		margin-right: 5px;
+	}
+	.withscroll {
+		width: fixed;
+		overflow-x: scroll;
+		white-space: nowrap;
+	}
+	.backC{
+		color: #0F2BB2;
+    font-size: 30px;
+    margin-left: -10px !important;
+	}
+	.calendarC{
+		color: #0F2BB2;
+    font-size: 30px;
+    margin-left: -10px !important;
+	}
+	.forwardC{
+		color: #0F2BB2;
+    font-size: 30px;
+    margin-left: -2px !important;
+	}
+	.monthP{
+		color: #2733B9;
+    font-size: 18px;
+    font-family: 'Roboto' !important;
+	}
+	.eventBtn{
+    height: 30px !important;
+    width: 115px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 12px !important;
+    background: #0614AE;
+    font-family: 'Roboto' !important;
+    float: right;
+    margin-right: 10px;
+    -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
+	}
+	.eventBtn:hover{
+		background-color: #0614AE !important;
+	}
+	.clockC{
+		width: -webkit-fill-available;
+    margin: 15px;
+	}
+	.withscroll::-webkit-scrollbar {
+	  width: 5px;
+	  height: 4px;
+
+	}
+	.withscroll{
+		display: grid;
+    text-align: center;
+	}
+	.currentDate {
+    width: 100px;
+    height: 36px;
+    display: inline-block;
+    border: 3px solid #0614AE;
+    padding-top: 7px;
+    margin-top: -9px;
+    margin-left: -5px;
+  }
+
+	/* Track */
+	.withscroll::-webkit-scrollbar-track {
+	  backgroud: #f1f1f1; 
+	}
+	 
+	/* Handle */
+	.withscroll::-webkit-scrollbar-thumb {
+	  background: #0F2BB2; 
+	}
+
+	/* Handle on hover */
+	.withscroll::-webkit-scrollbar-thumb:hover {
+	  background: #0F2BB2; 
+	}
+
+	.setCol {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 8.33333%;
+    -ms-flex: 0 0 8.33333%;
+    flex: 0 0 14.285714285714286%;
+    width: 14.285714285714286%;
+    max-width: 14.285714285714286%;
+    background: #9A9DA0;
+    color: #474748;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Roboto' !important;
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    border: 2px solid #fff;
+    padding-top: 10px;
+    margin-top: 5px;
+  }
+  .setCol1 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 8.33333%;
+    -ms-flex: 0 0 8.33333%;
+    flex: 0 0 14.285714285714286%;
+    width: 14.285714285714286%;
+    max-width: 14.285714285714286%;
+    background: #F3F3F3;
+    color: #474748;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Roboto' !important;
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    border: 2px solid #fff;
+    padding-top: 10px;
+    margin-top: 5px;
+  }
+  .calendar-weekday {
+    font-size: 16px;
+    font-family: 'Roboto' !important;
+    display: block;
+  }
+	.EventBtn{
+		height: 30px;
+    width: 125px;
+    border-color: #C3C5C6;
+    color: #9c9c9c;
+    font-weight: 600;
+    font-size: 12px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.EventBtn:hover{
+		background-color: transparent !important;
+	}
+	.eventCol{
+		display: flex;
+    align-items: center;
+    justify-content: center;
+	}
+	.eventItem{
+		background: #F3F3F3;
+    width: 92%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+	}
+	.editBtn{
+		    width: 50px;
+    height: 22px;
+    position: static;
+    border-color: #C3C5C6;
+    color: #9c9c9c;
+    font-weight: 600;
+    font-size: 12px;
+    margin: 0 !important;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.openBEO{
+		    width: 80px;
+    height: 22px;
+    border-color: #C3C5C6;
+    color: #9c9c9c;
+    font-weight: 600;
+    font-size: 12px;
+    margin: auto !important;
+	}
+	.timeP{
+		color: #232425;
+    line-height: 20px;
+	}
+	.descP{
+    font-size: 12px;
+    color: #1E1F20;
+    line-height: 20px;
+	}
+	.descB{
+		font-size: 16px;
+		color: #1E1F20;
+    font-family: 'Roboto' !important;
+	}
+	.colP{
+		    padding: 0 !important;
+	}
+	.colEdit{
+		margin-left: -12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	}
+  .shapeC{
+    height: 15px;
+    width: 15px;
+    float: left;
+    margin-top: -10px;
+    margin-left: -5px;
+  }
+}

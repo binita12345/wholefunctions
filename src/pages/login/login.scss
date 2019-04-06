@@ -1,0 +1,81 @@
+page-login {
+ 	.logoHotel {
+    height: 20vh;
+    width: 20vh;
+    border-radius: 100%;
+    display: flex;
+    margin: auto;
+    margin-top: -10.3vh;
+    z-index: 999;
+    position: relative;
+    }
+    .animationImg{
+        height: 30vh;
+    width: 100%;
+    }
+ 	.bgCss {
+ 		background-color: #F3F3F3;
+ 	}
+ 	.formCss{
+ 		width: 85%;
+    margin: auto;
+ 	}
+ 	.inputText{
+    font-size: 14px;
+ 	}
+ 	.itemCss{
+    border-radius: 7px;
+    min-height: 35px;
+    height: 32px;
+ 	}
+ 	.loginBtn{
+ 		background: #1221B0;
+    width: 50%;
+    height: 30px;
+    margin: auto;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: -5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+ 	}
+ 	.loginBtn:hover{
+		background-color: #1221B0 !important;
+	}
+	.alterCss{
+		color: #9A9FA3;
+    font-weight: 500;
+    text-align: center;
+	}
+	.lastBtns{
+		display: flex;
+    width: 85%;
+    margin: auto;
+	}
+	.resetBtn{
+		width: 50%;
+    height: 30px;
+    font-size: 12px;
+    background: transparent;
+    color: #C1C0C1;
+    font-weight: 600;
+    border: 1px solid;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)
+	}
+	.resetBtn:hover{
+		background-color: transparent !important;
+	}
+
+  img {
+    max-width: 100%;
+    max-height: 400px;
+    width: 100%;
+  }
+  .frgtPwd{
+    font-size: 14px;
+    color: #999999;
+    text-align: right;
+    font-family: 'Roboto' !important;
+  }
+
+
+}
